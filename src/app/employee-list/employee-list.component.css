@@ -1,0 +1,24 @@
+.new-employee {
+  align-items: center;
+  text-transform: uppercase;
+
+  color: #2f80ed;
+
+  background: #ffffff;
+  border: 1px solid #2f80ed;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+tbody {
+  border-radius: 8px;
+}
+
+tr {
+  background: #ebf0f6;
+  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.panel-body {
+  margin-top: 20px;
+}

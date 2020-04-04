@@ -1,0 +1,48 @@
+<div class="panel panel-primary" style="padding: 12px;">
+  <div class="panel-heading d-flex">
+    <h2>Employees</h2>
+    <button class="ml-auto new-employee" (click)="createEmployee()">
+      + New Employee
+    </button>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees | async">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.surname }}</td>
+          <td>{{ employee.email }}</td>
+          <td>
+            <button
+              (click)="employeeDetails(employee.id)"
+              class="btn btn-secondary mr-2"
+            >
+              Details
+            </button>
+            <button
+              (click)="updateEmployee(employee.id)"
+              class="btn btn-info mr-2"
+              style="background-color: #2f80ed;"
+            >
+              Update
+            </button>
+            <button
+              (click)="deleteEmployee(employee.id)"
+              class="btn btn-danger mr-2"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

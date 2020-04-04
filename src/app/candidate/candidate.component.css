@@ -1,0 +1,11 @@
+.new-candidate {
+  align-items: center;
+  text-transform: uppercase;
+
+  color: #2f80ed;
+
+  background: #ffffff;
+  border: 1px solid #2f80ed;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
