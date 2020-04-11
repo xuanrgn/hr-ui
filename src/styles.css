@@ -16,6 +16,7 @@ html, body{
     height: 100%;
 }
 
+
 .container {
     display: flex;
     flex-direction: row;
@@ -29,6 +30,12 @@ html, body{
 	flex-direction: column;
 }
 
+.card-column {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
 .row {
 	width: 100%;
 	display: flex;
@@ -36,15 +43,16 @@ html, body{
 }
 
 .card {
-	margin-top: 100px;
 	width: 90%;
 	align-self: center;
 	background-color: #F5F9FD;
 	border-radius: 10px;
 	display: flex;
+	align-self: center;
 }
 
 .menu-card {
+	overflow: hidden;
 	width: 80%;
 	align-self: center;
 	background-color: #EBF0F6;
@@ -52,6 +60,35 @@ html, body{
 	display: flex;
 }
 
+#space-between {
+    justify-content: space-between;
+}
+
+.row-card {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: 70px 5% 5% 5%;
+	align-items: center;
+}
+
+.add-round-btn{
+  align-items: center;
+  text-transform: uppercase;
+  color: #2f80ed;
+  background: #ffffff;
+  border: 1px solid #4D77FB;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.add-round-btn:hover { 
+    background: #4D77FB;
+    color:  #ffffff;
+}
 
 .navbar {
 	width: 100%;
