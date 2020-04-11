@@ -1,24 +1,38 @@
-.new-employee {
+header, .row {
+  display: flex;
   align-items: center;
-  text-transform: uppercase;
-
-  color: #2f80ed;
-
-  background: #ffffff;
-  border: 1px solid #2f80ed;
-  box-sizing: border-box;
-  border-radius: 8px;
+  border-bottom: 0.5px solid #efefef;
 }
 
-tbody {
-  border-radius: 8px;
+
+.col {
+	display: flex;
+	flex: 1; 
+	height: 56px;
+	align-items: center;
+	/*margin: 0 5%;*/
 }
 
-tr {
-  background: #ebf0f6;
-  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.1);
+.col1 {
+	display: flex;
+	flex: 1; 
+	height: 56px;
+	align-items: center;
+	margin-left: 5%;
 }
 
-.panel-body {
-  margin-top: 20px;
+section {
+	width: 100%;
 }
+
+.btn {
+	padding: 10px;
+	align-items: center;
+	color: #2f80ed;
+	background: #ffffff;
+	border: 1px solid #4D77FB;
+	box-sizing: border-box;
+	border-radius: 8px;
+	cursor: pointer;
+}
+

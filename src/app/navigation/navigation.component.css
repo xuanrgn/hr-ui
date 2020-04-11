@@ -41,7 +41,7 @@ li {
 }
 
 li:hover {
-  background-color: #dfe3e6;
+  background-color: rgb(223,227,230, 0.8);
 }
 
 a{
@@ -62,8 +62,8 @@ a{
 
 .expandable {
   overflow: hidden;
-  transition: all .5s ease-in-out;
-  height: 0;
+  /*transition: all .5s ease-in-out;
+  height: 0;*/
  }
  
  .expandable:target {
