@@ -1,44 +1,18 @@
-<div class="fluid-container vh-100">
-  <div class="row h-100">
-    <div class="col-2 bg">
-      <app-navigation class="h-100"></app-navigation>
-    </div>
-    <div class="col-10">
-      <nav class="navbar navbar-expand-sm">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a routerLink="" class="nav-link" routerLinkActive="active"> </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right ml-auto">
-          <li class="nav-item" style="margin-top: 5px; margin-right: 3px;">
-            <a href="#" class="nav-link text-dark">Log out</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <img src="../assets/Ellipse 84.png" alt="" />
-            </a>
-          </li>
-        </ul>
-      </nav>
+<!-- for logout -->
+<!-- a routerLink="" class="nav-link" routerLinkActive="active"> </a> -->
 
-      <div class="row">
-        <div class="container-fluid">
-          <div class="card">
-            <div class="card-body">
-              <router-outlet></router-outlet>
-            </div>
-          </div>
+<!-- for card
+<router-outlet></router-outlet> -->
+
+<div class="container">
+    <app-navigation></app-navigation>
+    <div class="column">
+      <div class="navbar">
+        <div class="content">
+          <a href="#"> <img src="../assets/search.svg" alt="" /></a>
+          <a href="#"> <img src="../assets/ava.svg" alt="" /></a>
         </div>
-      </div>
     </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
-
-<footer class="footer">
-  <div class="card-body">
-    <a href="https://github.com/argynkhuan/HR-module" style="color: aliceblue;"
-      >GitHub Repository</a
-    >
-  </div>
-</footer>

@@ -1,70 +1,47 @@
-<nav class="d-none d-md-block sidebar">
-  <div class="sidebar-sticky w-100">
-    <ul class="nav">
-      <li class="nav-item">
-        <div class="row">
-          <div class="col-12">
-            <form class="form">
-              <div class="form-group m-4 d-flex justify-content-between">
-                <div class="logo mt-1 mr-3"></div>
-                <label for="inputPassword2" class="sr-only">Search</label>
-                <input
-                  type="password"
-                  class="form-control search"
-                  id="inputPassword2"
-                  placeholder="Search"
-                />
-              </div>
-            </form>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <ul class="nav flex-column mt-5 navigation">
-      <li class="nav-item d-flex align-items-center">
-        <div class="count"></div>
-        <a class="nav-link active" routerLink="">Dashboard</a>
-      </li>
-      <li class="nav-item d-flex align-items-center">
-        <div class="count"></div>
-        <a class="nav-link" routerLink="vacancy">Vacancies</a>
-      </li>
-      <li class="nav-item d-flex align-items-center">
-        <div class="count"></div>
-        <a class="nav-link" routerLink="candidate">Candidates</a>
-      </li>
-      <li class="nav-item d-flex align-items-center">
-        <div class="count"></div>
-        <a class="nav-link" routerLink="employee">Employees</a>
-      </li>
+<div class="left-menu">
+  <div class="fixed">
+  	<div class="column">
+  		<div class="row" id="align-center">
+  		<div class="square" style="margin-right: 10px; color: #4D77FB;"></div>
+  		<p style="color: #4D77FB;"> HR Module</p>
+  	</div>
+  	<div class="menu-card">
+  		<ul>
+  			<div class="link" routerLink="">
+	  			<li> 	
+	  				<a href="#" class="icon"> <img src="../assets/vac.svg" alt="" /></a> 
+	 				<a routerLink="vacancy" id="active">Vacancies</a>
+	 				<div class="wrap"><a class="count" href="">2</a></div>  				
+				</li>
+			</div>
+			<div class="link" routerLink="employee">
+				<li>
+					<a href="#" class="icon"> <img src="../assets/emp.svg" alt="" /></a> 
+	 				<a routerLink="employee">Employees</a>
+				</li>
+			</div>
+  			<!-- needs to be fixed -->
+  			<li>
+  				<a class="icon"> <img src="../assets/inter.svg" alt="" /></a> 
+   				<a>Interviews</a>
+   				<!-- <a class="arrow"> <img src="../assets/up.svg" alt="" /></a> -->
+   				<a class="arrow"> <img src="../assets/down.svg" alt="" /></a>
 
-      <li class="nav-item d-flex align-items-center">
-        <div class="count"></div>
-        <a
-          class="nav-link"
-          data-toggle="collapse"
-          data-target="#collapseExample"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample"
-          >Interviews</a
-        >
-      </li>
-      <div class="collapse" id="collapseExample">
-        <li class="nav-item d-flex align-items-center">
-          <a class="nav-link" routerLink="">Registered</a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="nav-link" routerLink="">Approved</a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="nav-link" routerLink="">Completed</a>
-        </li>
-      </div>
-      <li class="nav-item d-flex align-items-center">
-        <div class="count"></div>
-        <a class="nav-link" routerLink="">Calendar</a>
-      </li>
-    </ul>
+  			</li>
+  			<div class="expandable" id="nav">
+  				<ul class="submenu">
+			        <div class="link"><li><a href="">Registered</a></li></div>
+			        <div class="link"><li><a href="">Approved</a></li></div>
+			        <div class="link"><li><a href="">Confermed</a></li></div>
+			 	</ul>
+  			</div>
+  			<div class="link"><li style="border-bottom: none;">
+  				<a href="#" class="icon"> <img src="../assets/cal.svg" alt="" /></a> 
+ 				<a routerLink="">Calendar</a>
+  			</li>
+  			</div>
+  		</ul>
+  	</div>
   </div>
-</nav>
+  	</div>    
+</div>
