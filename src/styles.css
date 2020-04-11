@@ -24,6 +24,7 @@ html, body{
 }
 
 .column {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -31,6 +32,30 @@ html, body{
 .row {
 	display: flex;
 	flex-direction: row;
+}
+
+.card {
+	margin-top: 100px;
+	width: 90%;
+	height: 520px;
+	align-self: center;
+	background-color: #F5F9FD;
+	border-radius: 10px;
+	display: flex;
+}
+
+.navbar {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	height: 7%;
+	border-bottom: 0.5px solid #efefef;
+	position: fixed;
+    background-color: white;
+}
+
+.fixed {
+    position: fixed;
 }
 
 .footer {
