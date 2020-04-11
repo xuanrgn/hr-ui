@@ -5,13 +5,16 @@
 <router-outlet></router-outlet> -->
 
 <div class="container">
-  <app-navigation></app-navigation>
-</div>
-
-<footer class="footer">
-  <div class="card-body">
-    <a href="https://github.com/argynkhuan/HR-module" style="color: aliceblue;"
-      >GitHub Repository</a
-    >
+    <app-navigation></app-navigation>
+    <div class="column">
+      <div class="navbar">
+        <div class="content">
+          <a href="#"> <img src="../assets/search.svg" alt="" /></a>
+          <a href="#"> <img src="../assets/ava.svg" alt="" /></a>
+        </div>
+    </div>
+    <div class="card">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</footer>
+</div>
