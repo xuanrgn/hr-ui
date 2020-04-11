@@ -40,11 +40,36 @@ li {
   align-self: center;
 }
 
+li:hover {
+  background-color: #dfe3e6;
+}
+
 a{
   text-decoration: none;
   color: #757575;
   font-weight: 350;
 }
+
+.submenu li {
+  /*display: none;*/
+  align-items: center;
+  padding-left: 30%;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.expandable {
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  height: 0;
+ }
+ 
+ .expandable:target {
+  height: 168px;
+}
+ 
 
 .arrow {
   margin-left: auto;

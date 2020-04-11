@@ -45,6 +45,7 @@ html, body{
 }
 
 .menu-card {
+	overflow: hidden;
 	width: 80%;
 	align-self: center;
 	background-color: #EBF0F6;

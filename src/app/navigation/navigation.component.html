@@ -7,24 +7,39 @@
   	</div>
   	<div class="menu-card">
   		<ul>
-  			<li> 	
-  				<a href="#" class="icon"> <img src="../assets/vac.svg" alt="" /></a> 
- 				<a routerLink="vacancy" id="active">Vacancies</a>
- 				<div class="wrap"><a class="count" href="">2</a></div>  				
-			</li>
-			<li>
-				<a href="#" class="icon"> <img src="../assets/emp.svg" alt="" /></a> 
- 				<a routerLink="employee">Employees</a>
-			</li>
+  			<div class="link" routerLink="">
+	  			<li> 	
+	  				<a href="#" class="icon"> <img src="../assets/vac.svg" alt="" /></a> 
+	 				<a routerLink="vacancy" id="active">Vacancies</a>
+	 				<div class="wrap"><a class="count" href="">2</a></div>  				
+				</li>
+			</div>
+			<div class="link" routerLink="employee">
+				<li>
+					<a href="#" class="icon"> <img src="../assets/emp.svg" alt="" /></a> 
+	 				<a routerLink="employee">Employees</a>
+				</li>
+			</div>
+  			<!-- needs to be fixed -->
   			<li>
-  				<a href="#" class="icon"> <img src="../assets/inter.svg" alt="" /></a> 
- 				<a routerLink="">Interviews</a>
- 				<a href="#" class="arrow"> <img src="../assets/down.svg" alt="" /></a> 
+  				<a class="icon"> <img src="../assets/inter.svg" alt="" /></a> 
+ 				<a>Interviews</a>
+ 				<!-- <a class="arrow"> <img src="../assets/up.svg" alt="" /></a> -->
+ 				<a href="#nav"  class="arrow"> <img src="../assets/down.svg" alt="" /></a>
+
   			</li>
-  			<li style="border-bottom: none;">
+  			<div class="expandable" id="nav">
+  				<ul class="submenu">
+			        <div class="link"><li><a href="">Registered</a></li></div>
+			        <div class="link"><li><a href="">Approved</a></li></div>
+			        <div class="link"><li><a href="">Confermed</a></li></div>
+			 	</ul>
+  			</div>
+  			<div class="link"><li style="border-bottom: none;">
   				<a href="#" class="icon"> <img src="../assets/cal.svg" alt="" /></a> 
  				<a routerLink="">Calendar</a>
   			</li>
+  			</div>
   		</ul>
   	</div>
   </div>
