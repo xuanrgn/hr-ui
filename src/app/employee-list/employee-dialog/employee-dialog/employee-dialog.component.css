@@ -1,0 +1,18 @@
+.save {
+  background: #4D77FB;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: white;
+}
+.cancel {
+  background: #E9ECFF;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #4D77FB;
+}

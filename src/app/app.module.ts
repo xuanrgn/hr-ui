@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
@@ -14,6 +14,8 @@ import { AddVacancyComponent } from './add-vacancy/add-vacancy.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { InterviewComponent } from './interview/interview.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,6 @@ import { InterviewComponent } from './interview/interview.component';
     NavigationComponent,
     CreateEmployeeComponent,
     EmployeeDetailsComponent,
-    EmployeeListComponent,
     UpdateEmployeeComponent,
     VacancyListComponent,
     AddVacancyComponent,
@@ -29,7 +30,7 @@ import { InterviewComponent } from './interview/interview.component';
     AddCandidateComponent,
     InterviewComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule, HttpClientModule,ReactiveFormsModule, NgbModule,],
   providers: [],
   bootstrap: [AppComponent]
 })

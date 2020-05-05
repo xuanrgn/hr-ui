@@ -3,6 +3,8 @@ import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { Employee } from "./../employee";
 import { EmployeeService } from "./../employee.service";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EmployeeDialogComponent } from './employee-dialog/employee-dialog/employee-dialog.component';
 
 @Component({
   selector: "app-employee-list",
@@ -14,7 +16,8 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(
     private employeeService: EmployeeService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
@@ -26,7 +29,7 @@ export class EmployeeListComponent implements OnInit {
     console.log("employees", this.employees);
   }
 
-  deleteEmployee(id: number) {
+  deleteEmployee(id: string) {
     this.employeeService.deleteEmployee(id).subscribe(
       (data) => {
         console.log(data);
@@ -41,10 +44,22 @@ export class EmployeeListComponent implements OnInit {
   }
 
   createEmployee() {
-    this.router.navigate(["add-employee"]);
+    this.openEmployeeDialog(new Employee());
+    //this.router.navigate(["add-employee"]);
   }
 
-  updateEmployee(id: number) {
-    this.router.navigate(["update", id]);
+  updateEmployee(employee: Employee) {
+    this.openEmployeeDialog(employee)
+    // this.router.navigate(["update", id]);
+  }
+
+  openEmployeeDialog(employee: Employee) {
+    const modalRef = this.modalService.open(EmployeeDialogComponent, { size: 'lg'});
+    modalRef.componentInstance.model = employee;
+    modalRef.result.then(result => {
+      if (result) {
+        this.reloadData();
+      }
+    });
   }
 }

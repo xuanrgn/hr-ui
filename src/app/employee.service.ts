@@ -11,7 +11,7 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
-  getEmployee(id: number): Observable<any> {
+  getEmployee(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
@@ -21,11 +21,11 @@ export class EmployeeService {
   }
 
   // tslint:disable-next-line: ban-types
-  updateEmployee(id: number, value: any): Observable<Object> {
+  updateEmployee(id: string, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  deleteEmployee(id: number): Observable<any> {
+  deleteEmployee(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 

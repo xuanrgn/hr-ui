@@ -3,18 +3,20 @@ header, .row {
   align-items: center;
   border-bottom: 0.5px solid #efefef;
 }
-
+.myEmployeeModalClass .modal-dialog {
+	max-width: 565px;
+  }
 
 .col {
 	display: flex;
-	flex: 1; 
+	flex: 1;
 	height: 56px;
 	align-items: center;
 }
 
 .col1 {
 	display: flex;
-	flex: 1; 
+	flex: 1;
 	height: 56px;
 	align-items: center;
 	margin-left: 5%;
