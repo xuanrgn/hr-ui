@@ -1,12 +1,16 @@
-
 <div class="modal-header">
   <h4 class="modal-title">Employee Dialog</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div *ngIf="error" class="alert alert-danger">
-  <p>{{ error }} </p>
+  <p>{{ error }}</p>
 </div>
 <div class="modal-body">
   <div class="row">
@@ -20,7 +24,8 @@
             class="form-control"
             formControlName="name"
             placeholder="Enter the name"
-            required />
+            required
+          />
         </div>
         <div class="form-group">
           <label for="surname">Surname</label>
@@ -30,7 +35,8 @@
             class="form-control"
             formControlName="surname"
             placeholder="Enter the surname"
-            required />
+            required
+          />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
@@ -40,13 +46,23 @@
             class="form-control"
             formControlName="email"
             placeholder="Enter the Email"
-            required />
+            required
+          />
         </div>
       </form>
     </div>
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn cancel" (click)="activeModal.close(null)">Cancel</button>
-  <button type="button" class="btn save" [disabled]="!form.valid" (click)="doSave()">Save Employee</button>
+  <button type="button" class="btn cancel" (click)="activeModal.close(null)">
+    Cancel
+  </button>
+  <button
+    type="button"
+    class="btn save"
+    [disabled]="!form.valid"
+    (click)="doSave()"
+  >
+    Save Employee
+  </button>
 </div>

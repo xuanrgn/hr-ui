@@ -1,5 +1,5 @@
 .save {
-  background: #4D77FB;
+  background: #4d77fb;
   border-radius: 8px;
   font-style: normal;
   font-weight: normal;
@@ -8,11 +8,11 @@
   color: white;
 }
 .cancel {
-  background: #E9ECFF;
+  background: #e9ecff;
   border-radius: 8px;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
-  color: #4D77FB;
+  color: #4d77fb;
 }
