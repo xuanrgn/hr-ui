@@ -10,12 +10,27 @@ import { InterviewComponent } from './interview/interview.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { throwIfAlreadyLoaded } from './shared/module-import.guard';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthGuard } from './auth/login/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
   {
     path: 'employee',
-    loadChildren: './employee-list/employee.module#EmployeeModule'
+    loadChildren: './employee-list/employee.module#EmployeeModule',
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'calendar',
+    loadChildren: './calendar/calendar/calendar.module#CalendarModule',
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    }
   },
   { path: 'add-employee', component: CreateEmployeeComponent },
   { path: 'vacancy', component: VacancyListComponent },

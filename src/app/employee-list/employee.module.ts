@@ -16,7 +16,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [EmployeeListComponent, EmployeeDialogComponent],
-  imports: [RouterModule.forChild(routes), NgbModule, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    RouterModule.forChild(routes),
+    NgbModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
 
   entryComponents: [EmployeeDialogComponent],
 })
