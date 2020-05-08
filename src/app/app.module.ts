@@ -64,6 +64,7 @@ const yourFirebaseConfig = {
     AngularFireModule.initializeApp(yourFirebaseConfig),
     AngularFireAuthModule,
   ],
+  bootstrap: [AppComponent],
   providers: [
     AuthService,
     {
