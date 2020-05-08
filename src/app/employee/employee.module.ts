@@ -1,11 +1,11 @@
-import { Routes, RouterModule } from "@angular/router";
-import { EmployeeListComponent } from "./employee-list.component";
-import { NgModule, Optional, SkipSelf } from "@angular/core";
-import { EmployeeDialogComponent } from "./employee-dialog/employee-dialog/employee-dialog.component";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CommonModule } from "@angular/common";
+import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
+import { EmployeeDialogComponent } from "./employee-dialog/employee-dialog.component";
+import { EmployeeListComponent } from "./employee-list.component";
 
 const routes: Routes = [
   {
