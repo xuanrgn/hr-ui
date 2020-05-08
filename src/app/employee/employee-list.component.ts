@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { Employee } from "./../employee";
 import { EmployeeService } from "./../employee.service";
 import { EmployeeDialogComponent } from "./employee-dialog/employee-dialog.component";
+import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 
 @Component({
   selector: "app-employee-list",
@@ -29,14 +30,14 @@ export class EmployeeListComponent implements OnInit {
     console.log("employees", this.employees);
   }
 
-  deleteEmployee(id: string) {
-    this.employeeService.deleteEmployee(id).subscribe(
-      (data) => {
-        console.log(data);
-        this.reloadData();
-      },
-      (error) => console.log(error)
-    );
+  deleteEmployee(employee: Employee) {
+    const modalRef = this.modalService.open(ConfirmDialogComponent);
+    modalRef.componentInstance.text = 'Are you sure you want to delete ' + employee.name + '?';
+    modalRef.result.then(result => {
+      if (result && result.action && result.action === 'yes') {
+        this.employeeService.deleteEmployee(employee.id).subscribe(() => this.reloadData());
+      }
+    });
   }
 
   employeeDetails(id: number) {

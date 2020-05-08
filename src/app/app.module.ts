@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthGuard } from './auth/login/auth.guard';
 import { AuthInterceptor } from './auth/login/auth.interceptor';
+import { ConfirmDialogComponent } from './shared/confirm-dialog.component';
 
 export function socialConfigs() {
   const config = new AuthServiceConfig(
@@ -52,6 +53,7 @@ const yourFirebaseConfig = {
     AddCandidateComponent,
     InterviewComponent,
     LoginComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,7 @@ const yourFirebaseConfig = {
     AngularFireModule.initializeApp(yourFirebaseConfig),
     AngularFireAuthModule,
   ],
+  entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent],
   providers: [
     AuthService,
