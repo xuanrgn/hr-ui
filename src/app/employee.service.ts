@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class EmployeeService {
+  private baseUrl = "https://hr-module-service.herokuapp.com/api/employees";
 
-  private baseUrl = 'https://hr-module-service.herokuapp.com/api/employees';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getEmployee(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
@@ -26,7 +25,7 @@ export class EmployeeService {
   }
 
   deleteEmployee(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: "text" });
   }
 
   getEmployeesList(): Observable<any> {

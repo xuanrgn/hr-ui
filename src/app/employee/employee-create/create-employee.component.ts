@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Employee } from "../employee";
-import { EmployeeService } from "../employee.service";
+import { Employee } from "src/app/employee";
+import { EmployeeService } from "src/app/employee.service";
 
 @Component({
   selector: "app-create-employee",
   templateUrl: "./create-employee.component.html",
-  styleUrls: ["./create-employee.component.css"]
+  styleUrls: ["./create-employee.component.css"],
 })
 export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
@@ -26,8 +26,8 @@ export class CreateEmployeeComponent implements OnInit {
 
   save() {
     this.employeeService.createEmployee(this.employee).subscribe(
-      data => console.log(data),
-      error => console.log(error)
+      (data) => console.log(data),
+      (error) => console.log(error)
     );
     this.employee = new Employee();
     this.gotoList();
