@@ -1,30 +1,34 @@
-<div class="panel panel-primary" style="padding: 12px;">
-  <div class="panel-heading d-flex">
-    <h2>Vacancies</h2>
-    <button class="ml-auto new-vacancy" (click)="createEmployee()">
-      + New Vacancy
-    </button>
-  </div>
-  <div class="panel-body">
-    <div class="card-column">
-      <div class="card w-100">
-        <section>
-          <div class="row" *ngFor="let vacancy of vacancies | async">
-            <div class="col1">{{ vacancy.name }}</div>
-            <div class="col">
-              <button class="btn">
-                Details
-              </button>
-              <button class="btn">
-                Update
-              </button>
-              <button сlass="btn">
-                Delete
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
+<div class="row-card" id="space-between">
+  <h2>Vacancies</h2>
+  <button class="add-round-btn" (click)="createEmployee()">
+    + New Vacancy
+  </button>
+</div>
 
+<div class="card-column">
+  <div class="card">
+    <section>
+      <header>
+        <div class="col1">Vacancy</div>
+        <div class="col">Actions</div>
+      </header>
+
+      <div class="row" *ngFor="let vacancy of vacancies | async">
+        <div class="col1">{{ vacancy.name }}</div>
+
+        <div class="col">
+          <button (click)="employeeDetails(employee.id)" class="btn">
+            Details
+          </button>
+          <button (click)="updateEmployee(employee)" class="btn">
+            Update
+          </button>
+          <button (click)="deleteEmployee(employee)" class="btn">
+            Delete
+          </button>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
+
