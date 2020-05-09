@@ -8,6 +8,8 @@ import { ApprovedInterviewComponent } from "./interview/approved/approved-interv
 import { CompletedInterviewComponent } from "./interview/completed/completed-interview.component";
 import { RegisteredInterviewComponent } from "./interview/registered/registered-interview.component";
 import { throwIfAlreadyLoaded } from "./shared/module-import.guard";
+import { LoginComponent } from './auth/login.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "vacancy", pathMatch: "full" },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: "candidate", component: CandidateComponent },
 
   { path: "interview/registered", component: RegisteredInterviewComponent },
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegistrationComponent },
   { path: "interview/approved", component: ApprovedInterviewComponent },
   { path: "interview/completed", component: CompletedInterviewComponent },
 

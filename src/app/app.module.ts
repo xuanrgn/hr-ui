@@ -20,6 +20,7 @@ import { NavigationComponent } from "./navigation/navigation.component";
 // import { AuthGuard } from './auth/login/auth.guard';
 import { ConfirmDialogComponent } from "./shared/confirm-dialog.component";
 import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
+import { RegistrationComponent } from './auth/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component
     CalendarComponent,
     LoginComponent,
     ConfirmDialogComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
