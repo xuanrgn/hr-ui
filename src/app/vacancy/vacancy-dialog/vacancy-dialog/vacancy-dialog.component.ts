@@ -29,7 +29,9 @@ export class VacancyDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.employees = this.employeeService.getEmployeesList();
+    this.employeeService.getEmployeesList().subscribe((val) => {
+      this.employees = val;
+    });
     this.form.patchValue(this.model);
     console.log("form", this.form);
     console.log("Model", this.model);

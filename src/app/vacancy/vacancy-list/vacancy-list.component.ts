@@ -16,7 +16,7 @@ import { VacancyDialogComponent } from '../vacancy-dialog/vacancy-dialog/vacancy
 export class VacancyListComponent implements OnInit {
   vacancies: Observable<Employee[]>;
   constructor(
-    private vacancyService: EmployeeService,
+    private vacancyService: VacancyService,
     private router: Router,
     private modalService: NgbModal
     ) { }
@@ -26,7 +26,7 @@ export class VacancyListComponent implements OnInit {
   }
 
   reloadData() {
-    this.vacancies = this.vacancyService.getEmployeesList();
+    this.vacancies = this.vacancyService.getList();
     console.log("employees", this.vacancies);
   }
 
