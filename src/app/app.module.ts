@@ -14,9 +14,7 @@ import { UpdateEmployeeComponent } from "./employee/employee-update/update-emplo
 import { InterviewComponent } from "./interview/interview.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
-import { VacancyListComponent } from "./vacancy/vacancy-list/vacancy-list.component";
 import { LoginComponent } from './auth/login/login.component';
-import { AuthGuard } from './auth/login/auth.guard';
 import { ConfirmDialogComponent } from './shared/confirm-dialog.component';
 
 @NgModule({
@@ -44,18 +42,6 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog.component';
   ],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent],
-  providers: [
-    // AuthService,
-    // {
-    //   provide: AuthServiceConfig,
-    //   useFactory: socialConfigs
-    // },
-    // AuthGuard,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true,
-    // },
-  ],
+  providers: [],
 })
 export class AppModule {}
