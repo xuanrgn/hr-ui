@@ -17,7 +17,10 @@ const routes: Routes = [
     loadChildren: "./employee/employee.module#EmployeeModule",
   },
   { path: "add-employee", component: CreateEmployeeComponent },
-  { path: "vacancy", component: VacancyListComponent },
+  {
+    path: "vacancy",
+    loadChildren: "./vacancy/vacancy.module#VacancyModule",
+  },
   { path: "add-vacancy", component: AddVacancyComponent },
   { path: "candidate", component: CandidateComponent },
   { path: "add-candidate", component: AddCandidateComponent },

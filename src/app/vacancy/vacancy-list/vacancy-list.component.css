@@ -9,3 +9,33 @@
   box-sizing: border-box;
   border-radius: 8px;
 }
+.row {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid #efefef;
+  margin: 0;
+}
+
+.card {
+  background: #F5F9FD;
+}
+
+.col {
+  display: flex;
+  flex: 1;
+  height: 56px;
+  align-items: center;
+}
+
+.col1 {
+  display: flex;
+  flex: 1;
+  height: 56px;
+  color: #424242;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  align-items: center;
+  margin-left: 5%;
+}

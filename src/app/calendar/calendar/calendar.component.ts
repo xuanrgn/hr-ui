@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from 'devextreme/data/custom_store';
-import { AuthorizationService } from 'src/app/auth/login/auth-service';
 // import { GoogleApis } from 'googleapis/build/src'
 
 @Component({
@@ -17,7 +16,7 @@ export class CalendarComponent implements OnInit {
 
 
 
-  constructor( private http: HttpClient, private authService: AuthorizationService) {
+  constructor( private http: HttpClient) {
     this.dataSource = new DataSource({
         store: new CustomStore({
             load: (options) => this.getData(options, { showDeleted: false })
