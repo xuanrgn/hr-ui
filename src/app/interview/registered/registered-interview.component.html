@@ -1,3 +1,36 @@
-<div class="long-title">
-  <h3>Registered Interviews Component</h3>
+<div class="row-card" id="space-between">
+  <h2>Employees</h2>
+  <button class="add-round-btn">
+    + New Employee
+  </button>
+</div>
+
+<div class="card-column">
+  <div class="card">
+    <section>
+      <header>
+        <div class="col1">First Name</div>
+        <div class="col">Last Name</div>
+        <div class="col">Email</div>
+        <div class="col">Actions</div>
+      </header>
+
+      <div class="row" *ngFor="let employee of employees | async">
+        <div class="col1">{{ employee }}</div>
+        <div class="col">{{ employee }}</div>
+        <div class="col">{{ employee }}</div>
+        <div class="col">
+          <button class="btn">
+            Details
+          </button>
+          <button class="btn">
+            Update
+          </button>
+          <button class="btn">
+            Delete
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

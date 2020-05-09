@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Employee } from "src/app/employee";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { EmployeeService } from "src/app/employee.service";
+import { EmployeeService } from 'src/app/service/employee.service';
 
 @Component({
   selector: "app-employee-dialog",
