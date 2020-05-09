@@ -3,9 +3,9 @@ import { Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable } from "rxjs";
 import { Employee } from "./../employee";
-import { EmployeeService } from "./../employee.service";
 import { EmployeeDialogComponent } from "./employee-dialog/employee-dialog.component";
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
+import { EmployeeService } from '../service/employee.service';
 
 @Component({
   selector: "app-employee-list",

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Employee } from "src/app/employee";
-import { EmployeeService } from "src/app/employee.service";
+import { EmployeeService } from 'src/app/service/employee.service';
 
 @Component({
   selector: "app-employee-details",

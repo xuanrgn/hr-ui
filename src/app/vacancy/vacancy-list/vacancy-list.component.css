@@ -1,24 +1,10 @@
-.new-vacancy {
-  align-items: center;
-  text-transform: uppercase;
-
-  color: #2f80ed;
-
-  background: #ffffff;
-  border: 1px solid #2f80ed;
-  box-sizing: border-box;
-  border-radius: 8px;
-}
+header,
 .row {
   display: flex;
   align-items: center;
   border-bottom: 0.5px solid #efefef;
-  margin: 0;
 }
 
-.card {
-  background: #F5F9FD;
-}
 
 .col {
   display: flex;
@@ -31,11 +17,21 @@
   display: flex;
   flex: 1;
   height: 56px;
-  color: #424242;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
   align-items: center;
   margin-left: 5%;
+}
+
+section {
+  width: 100%;
+}
+
+.btn {
+  padding: 10px;
+  align-items: center;
+  color: #2f80ed;
+  background: #ffffff;
+  border: 1px solid #4d77fb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
 }

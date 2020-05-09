@@ -3,9 +3,9 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VacancyService } from '../../vacancy.service';
 import { Vacancy } from '../../vacancy.model';
-import { EmployeeService } from 'src/app/employee.service';
 import { Observable } from 'rxjs';
 import { Employee } from 'src/app/employee';
+import { EmployeeService } from 'src/app/service/employee.service';
 
 @Component({
   selector: 'app-vacancy-dialog',

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisteredInterviewComponent implements OnInit {
 
+  employees: string[];
+
   constructor() { }
 
   ngOnInit() {
+    this.employees
   }
 
 }
