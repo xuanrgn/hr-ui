@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
     "@ng-bootstrap/ng-bootstrap": "^5.3.1",
-    "bootstrap": "^4.3.1",
     "core-js": "2.4.1",
     "devexpress-diagram": "1.0.0",
     "devexpress-gantt": "1.0.0",
