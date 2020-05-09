@@ -16,7 +16,7 @@ import { NavigationComponent } from "./navigation/navigation.component";
 import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
 import { VacancyListComponent } from "./vacancy/vacancy-list/vacancy-list.component";
 import { LoginComponent } from './auth/login/login.component';
-import { AuthGuard } from './auth/login/auth.guard';
+// import { AuthGuard } from './auth/login/auth.guard';
 import { ConfirmDialogComponent } from './shared/confirm-dialog.component';
 
 @NgModule({
