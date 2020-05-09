@@ -15,6 +15,7 @@ import { InterviewComponent } from "./interview/interview.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
 import { LoginComponent } from './auth/login/login.component';
+// import { AuthGuard } from './auth/login/auth.guard';
 import { ConfirmDialogComponent } from './shared/confirm-dialog.component';
 
 @NgModule({
