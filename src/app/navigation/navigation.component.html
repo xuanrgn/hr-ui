@@ -27,6 +27,7 @@
             data-target="#example"
             aria-expanded="true"
             aria-controls="example"
+            [ngClass]="{'active':active == 'Interviews'}" 
           >
             <a class="icon"> <img src="../assets/inter.svg" alt="" /></a>
             <a>Interviews</a>
@@ -36,13 +37,13 @@
           <div class="collapse" id="example">
             <ul class="submenu">
               <div class="link" routerLink="interview/registered">
-                <li [ngClass]="{'active':active == 'Registered'}" (click)="setActive('Registered')"  ><a>Registered</a></li>
+                <li [ngClass]="{'active':active == 'Registered'}" (click)="setActive('Interviews')"  ><a>Registered</a></li>
               </div>
               <div class="link" routerLink="interview/approved">
-                <li  [ngClass]="{'active':active == 'Approved'}" (click)="setActive('Approved')"  ><a>Approved</a></li>
+                <li  [ngClass]="{'active':active == 'Approved'}" (click)="setActive('Interviews')"  ><a>Approved</a></li>
               </div>
               <div class="link" routerLink="interview/completed">
-                <li  [ngClass]="{'active':active == 'Cmopleted'}" (click)="setActive('Cmopleted')"  ><a>Cmopleted</a></li>
+                <li  [ngClass]="{'active':active == 'Completed'}" (click)="setActive('Interviews')"  ><a>Completed</a></li>
               </div>
             </ul>
           </div>
