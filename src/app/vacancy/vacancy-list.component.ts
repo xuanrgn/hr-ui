@@ -38,6 +38,7 @@ export class VacancyListComponent implements OnInit {
   }
 
   doUpdate(vacancy: Vacancy) {
+    console.log("edit: ", vacancy);
     this.openDialog(vacancy);
   }
 
