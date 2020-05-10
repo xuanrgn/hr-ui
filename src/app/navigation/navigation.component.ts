@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { VacancyService } from "../service/vacancy.service";
+import { Vacancy } from '../vacancy/vacancy.model';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  vacancyList: Vacancy[] = [];
+  constructor(private vacancyService: VacancyService) { }
 
   ngOnInit() {
+    this.vacancyService.getList().subscribe(
+      (val) => {
+        this.vacancyList = val;
+      }
+    )
   }
 
 }
