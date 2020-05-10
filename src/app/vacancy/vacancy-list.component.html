@@ -1,6 +1,6 @@
 <div class="row-card" id="space-between">
   <h2>Vacancies</h2>
-  <button class="add-round-btn" (click)="createEmployee()">
+  <button class="add-round-btn" (click)="doCreate()">
     + New Vacancy
   </button>
 </div>
@@ -17,13 +17,13 @@
         <div class="col1">{{ vacancy.name }}</div>
 
         <div class="col">
-          <button (click)="employeeDetails(employee.id)" class="btn">
+          <button (click)="doEdit(vacancy.id)" class="btn">
             Details
           </button>
-          <button (click)="updateEmployee(employee)" class="btn">
+          <button (click)="doUpdate(vacancy)" class="btn">
             Update
           </button>
-          <button (click)="deleteEmployee(employee)" class="btn">
+          <button (click)="doDelete(vacancy)" class="btn">
             Delete
           </button>
         </div>
@@ -31,4 +31,3 @@
     </section>
   </div>
 </div>
-

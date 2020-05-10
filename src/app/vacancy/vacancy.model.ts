@@ -1,8 +1,9 @@
-import { Employee } from '../employee';
+import { Employee } from '../employee/employee';
+import { Candidate } from '../candidate/candidate.model';
 
 export class Vacancy {
   id: string;
   name: string;
-  employees: [Employee];
-  candidates: [];
+  employeeIds: string[];
+  candidateIds: string[];
 }

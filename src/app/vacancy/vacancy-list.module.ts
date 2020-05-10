@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
-import { VacancyListComponent } from './vacancy-list/vacancy-list.component';
-import { VacancyDialogComponent } from './vacancy-dialog/vacancy-dialog/vacancy-dialog.component';
+import { VacancyDialogComponent } from "./vacancy-dialog/vacancy-dialog.component";
+import { VacancyListComponent } from "./vacancy-list.component";
 
 const routes: Routes = [
   {

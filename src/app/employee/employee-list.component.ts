@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable } from "rxjs";
-import { Employee } from "./../employee";
+import { Employee } from "./employee";
 import { EmployeeDialogComponent } from "./employee-dialog/employee-dialog.component";
 import { ConfirmDialogComponent } from '../shared/confirm-dialog.component';
 import { EmployeeService } from '../service/employee.service';

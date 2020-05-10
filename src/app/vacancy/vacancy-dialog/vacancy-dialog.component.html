@@ -30,11 +30,19 @@
         <div class="form-group">
           <label>Employees</label>
           <select formControlName="employees" class="form-control">
-            <option class="form-control" (onchange)="addEmployee(employee)" [value]='employee.id' *ngFor="let employee of employees">{{ employee.name }}</option>
+            <option
+              class="form-control"
+              (onchange)="addEmployee(employee.id)"
+              [value]="employee.id"
+              *ngFor="let employee of employees"
+              >{{ employee.name }}</option
+            >
           </select>
         </div>
       </form>
     </div>
+
+
   </div>
 </div>
 <div class="modal-footer">

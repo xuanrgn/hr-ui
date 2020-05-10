@@ -1,5 +1,8 @@
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "./auth/auth.guard";
+import { LoginComponent } from "./auth/login.component";
+import { RegistrationComponent } from "./auth/registration/registration.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { CandidateComponent } from "./candidate/candidate.component";
 import { EmployeeDetailsComponent } from "./employee/employee-form/employee-details.component";
@@ -8,21 +11,17 @@ import { ApprovedInterviewComponent } from "./interview/approved/approved-interv
 import { CompletedInterviewComponent } from "./interview/completed/completed-interview.component";
 import { RegisteredInterviewComponent } from "./interview/registered/registered-interview.component";
 import { throwIfAlreadyLoaded } from "./shared/module-import.guard";
-import { LoginComponent } from './auth/login.component';
-import { RegistrationComponent } from './auth/registration/registration.component';
-import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: "", redirectTo: "vacancy", pathMatch: "full" },
   {
     path: "employee",
-    loadChildren: "./employee/employee.module#EmployeeModule",
-    canActivate: [AuthGuard]
+    loadChildren: "./employee/employee-list.module#EmployeeModule",
   },
   {
     path: "vacancy",
-    loadChildren: "./vacancy/vacancy.module#VacancyModule",
-    canActivate: [AuthGuard]
+    loadChildren: "./vacancy/vacancy-list.module#VacancyModule",
+    canActivate: [AuthGuard],
   },
   { path: "candidate", component: CandidateComponent },
 
@@ -33,8 +32,9 @@ const routes: Routes = [
   { path: "interview/completed", component: CompletedInterviewComponent },
 
   {
-    path: "calendar", component: CalendarComponent,
-    canActivate: [AuthGuard]
+    path: "calendar",
+    component: CalendarComponent,
+    canActivate: [AuthGuard],
   },
 
   { path: "update/:id", component: UpdateEmployeeComponent },

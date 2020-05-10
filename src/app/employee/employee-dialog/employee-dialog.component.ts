@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { Employee } from "src/app/employee";
+import { Employee } from "src/app/employee/employee";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { EmployeeService } from 'src/app/service/employee.service';
 
