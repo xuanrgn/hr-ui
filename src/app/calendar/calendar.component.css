@@ -1,7 +1,25 @@
 ::ng-deep .long-title h3 {
-  font-family: 'Segoe UI Light', 'Helvetica Neue Light', 'Segoe UI', 'Helvetica Neue', 'Trebuchet MS', Verdana;
   font-weight: 200;
   font-size: 28px;
   text-align: center;
   margin: 100px;
+}
+
+.row.ml-auto.mt-5.mr-auto {
+	padding: 2rem;
+	padding-top: 4rem;
+	z-index: -100;
+}
+
+.fc-state-default {
+	border-radius: 5px;
+}
+
+.fc button {
+	height: 3rem;
+	padding: 1rem;
+}
+
+.fc-state-default.fc-corner-left{
+	border-radius: 5px;
 }
