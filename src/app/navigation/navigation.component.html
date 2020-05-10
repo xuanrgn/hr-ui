@@ -8,14 +8,14 @@
       <div class="menu-card">
         <ul>
           <div class="link" routerLink="vacancy">
-            <li>
+            <li [ngClass]="{'active':active == 'Vacancies'}" (click)="setActive('Vacancies')" class="active">
               <a class="icon"> <img src="../assets/vac.svg" alt="" /></a>
-              <a id="active">Vacancies</a>
+              <a>Vacancies</a>
               <div class="wrap"><a class="count" href="">{{ vacancyList.length }}</a></div>
             </li>
           </div>
           <div class="link" routerLink="employee">
-            <li>
+            <li [ngClass]="{'active':active == 'Employees'}" (click)="setActive('Employees')">
               <a class="icon"> <img src="../assets/emp.svg" alt="" /></a>
               <a>Employees</a>
             </li>
@@ -36,18 +36,18 @@
           <div class="collapse" id="example">
             <ul class="submenu">
               <div class="link" routerLink="interview/registered">
-                <li><a>Registered</a></li>
+                <li [ngClass]="{'active':active == 'Registered'}" (click)="setActive('Registered')"  ><a>Registered</a></li>
               </div>
               <div class="link" routerLink="interview/approved">
-                <li><a>Approved</a></li>
+                <li  [ngClass]="{'active':active == 'Approved'}" (click)="setActive('Approved')"  ><a>Approved</a></li>
               </div>
               <div class="link" routerLink="interview/completed">
-                <li><a>Cmopleted</a></li>
+                <li  [ngClass]="{'active':active == 'Cmopleted'}" (click)="setActive('Cmopleted')"  ><a>Cmopleted</a></li>
               </div>
             </ul>
           </div>
           <div class="link" routerLink="calendar">
-            <li style="border-bottom: none;">
+            <li  [ngClass]="{'active':active == 'Calendar'}" (click)="setActive('Calendar')"  style="border-bottom: none;">
               <a class="icon"> <img src="../assets/cal.svg" alt="" /></a>
               <a>Calendar</a>
             </li>

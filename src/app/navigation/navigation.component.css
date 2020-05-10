@@ -31,6 +31,21 @@ a#active {
   font-weight: 400;
 }
 
+.active a{
+  color: #4D77FB;
+  font-weight: 400;
+}
+
+.active img {
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+
+.active a.count {
+  color: white;
+}
+
+
+
 li {
   flex-direction: row;
   border-bottom: 0.5px solid #DFE3E6;

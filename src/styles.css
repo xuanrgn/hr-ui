@@ -200,7 +200,18 @@ ol, ul, dl {
 
 .dropdown-item {
 	font-weight: 300;
+	cursor: pointer;
 }
 
 .card .row:last-child { border-bottom: none; }
+
+.btn , .form-control{
+	font-weight: 300;
+	border-radius: 8px;
+}
+
+
+.row.m-0.mt-2 a {
+	font-size: 0.8rem;
+}
 
