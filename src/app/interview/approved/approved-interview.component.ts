@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Candidate } from 'src/app/candidate/candidate.model';
+import { CandidateService } from 'src/app/service/candidate.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'approved-interview',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprovedInterviewComponent implements OnInit {
 
-  constructor() { }
+  approvedInterview: Observable<Candidate[]>
 
-  ngOnInit() {
+  constructor(
+    private candidateService: CandidateService
+  ) {
+
   }
 
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.approvedInterview = this.candidateService.getList().pipe(
+      map( candidates =>
+        candidates.filter(
+          (candidate: Candidate) => "APPROVED" === candidate.status
+        )
+      )
+    );
+  }
 }

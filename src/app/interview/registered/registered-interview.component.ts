@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/employee/employee';
+import { VacancyService } from 'src/app/service/vacancy.service';
+import { Vacancy } from 'src/app/vacancy/vacancy.model';
+import { Observable } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
+import { CandidateService } from 'src/app/service/candidate.service';
+import { Candidate } from 'src/app/candidate/candidate.model';
 
 @Component({
   selector: 'registered-interview',
@@ -8,15 +14,24 @@ import { Employee } from 'src/app/employee/employee';
 })
 export class RegisteredInterviewComponent implements OnInit {
 
-  registeredInterview: Employee[] = [];
+  registeredInterview: Observable<Candidate[]>;
 
-  constructor() { }
+  constructor(private candidateService: CandidateService) {
 
-  ngOnInit() {
-    var emp = new Employee();
-    emp.fullName = "Miras"
-    emp.position = "Project Manager"
-    this.registeredInterview.push(emp)
   }
 
+  ngOnInit() {
+    this.reloadData();
+  }
+
+
+  reloadData() {
+    this.registeredInterview = this.candidateService.getList().pipe(
+      map( candidates =>
+        candidates.filter(
+          (candidate: Candidate) => "REGISTERED" === candidate.status
+        )
+      )
+    );
+  }
 }
