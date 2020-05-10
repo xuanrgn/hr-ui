@@ -15,12 +15,45 @@ html, body{
     height: 100%;
 }
 
+* {
+  outline: none;
+}
+
+p {
+	margin-bottom: 0;
+}
+
+.form-control {
+	font-weight: 300;
+}
 
 .container_ {
     display: flex;
     flex-direction: row;
     min-height: 100%;
     align-items: stretch;
+}
+
+.modal-content {
+	display: flex;
+	border-radius: 16px;
+	background-color: white;
+	align-self: center;
+	border: none;
+}
+
+.modal-header, .modal-footer, .modal-body{
+	border : none;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.modal-header {
+	padding-top: 2rem;
+}
+
+.modal-footer{
+	padding-bottom: 2rem;
 }
 
 .column {
