@@ -47,8 +47,8 @@ export class LoginComponent implements OnInit {
         if (this.loginForm.invalid) {
             return;
         }
+        this.authenticationService.setToken("true");
         this.authenticationService.setIsLogined(true);
-        this.router.navigate(["/vacancy"]);
         // this.loading = true;
         // this.authenticationService.login(this.f.username.value, this.f.password.value)
         //     .pipe(first())

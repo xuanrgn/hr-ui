@@ -9,23 +9,24 @@
   <div class="card">
     <section>
       <header>
-        <div class="col1">Vacancy</div>
-        <div class="col">Actions</div>
+        <div class="col-2 col1">Vacancy</div>
       </header>
 
       <div class="row" *ngFor="let vacancy of vacancies | async">
-        <div class="col1">{{ vacancy.name }}</div>
+        <div class="col-8 col1">{{ vacancy.name }}</div>
 
-        <div class="col">
-          <button (click)="doEdit(vacancy.id)" class="btn">
-            Details
-          </button>
-          <button (click)="doUpdate(vacancy)" class="btn">
-            Update
-          </button>
-          <button (click)="doDelete(vacancy)" class="btn">
-            Delete
-          </button>
+        <div class="col-3 col d-flex justify-content-end">
+          <div class="dropdown show dropleft">
+            <a class="d-flex align-items-center font-weight-bold" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ...
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item header-bold" (click)="doUpdate(vacancy)">EDIT</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger header-bold" (click)="doDelete(vacancy)">REMOVE</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

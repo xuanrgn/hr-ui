@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         console.log('OnlyLoggedInUsers');
        // if (!this.auth.isTokenExpired()) {
-            if(this.isLogined == true) {
+            if(this.auth.getToken() != null) {
               return true;
             }
         // } else {

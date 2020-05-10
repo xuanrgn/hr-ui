@@ -5,7 +5,12 @@ header,
   border-bottom: 0.5px solid #efefef;
 }
 
-
+.row {
+  margin: 0%;
+}
+.dropdown {
+  border-radius: 8px;
+}
 .col {
   display: flex;
   flex: 1;
