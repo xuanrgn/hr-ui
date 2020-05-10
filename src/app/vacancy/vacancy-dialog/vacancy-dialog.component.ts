@@ -1,18 +1,12 @@
 import { Component, Input, OnInit } from "@angular/core";
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormArray,
-  FormControl,
-} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { IDropdownSettings } from "ng-multiselect-dropdown";
 import { Observable } from "rxjs";
 import { Employee } from "src/app/employee/employee";
 import { EmployeeService } from "src/app/service/employee.service";
 import { VacancyService } from "src/app/service/vacancy.service";
 import { Vacancy } from "../vacancy.model";
-import { IDropdownSettings } from "ng-multiselect-dropdown";
 
 @Component({
   selector: "app-vacancy-dialog",
@@ -54,11 +48,12 @@ export class VacancyDialogComponent implements OnInit {
     this.dropdownSettings = {
       singleSelection: false,
       idField: "id",
-      textField: "name",
+      textField: "fullName",
       selectAllText: "Select All",
       unSelectAllText: "Unselect All",
       itemsShowLimit: 3,
       allowSearchFilter: true,
+      noDataAvailablePlaceholderText: "Employees not found",
     };
 
     this.form.patchValue(this.model);
@@ -101,5 +96,10 @@ export class VacancyDialogComponent implements OnInit {
     items.forEach((e) => {
       this.onItemSelect(e);
     });
+  }
+
+  onSelected(event: any) {
+    const position = event.target.value;
+    console.log("POSITION: ", position);
   }
 }
