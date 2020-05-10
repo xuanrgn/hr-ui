@@ -4,7 +4,6 @@ import { AuthGuard } from "./auth/auth.guard";
 import { LoginComponent } from "./auth/login.component";
 import { RegistrationComponent } from "./auth/registration/registration.component";
 import { CalendarComponent } from "./calendar/calendar.component";
-import { CandidateComponent } from "./candidate/candidate.component";
 import { EmployeeDetailsComponent } from "./employee/employee-form/employee-details.component";
 import { UpdateEmployeeComponent } from "./employee/employee-update/update-employee.component";
 import { ApprovedInterviewComponent } from "./interview/approved/approved-interview.component";
@@ -17,14 +16,19 @@ const routes: Routes = [
   {
     path: "employee",
     loadChildren: "./employee/employee-list.module#EmployeeModule",
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: "vacancy",
     loadChildren: "./vacancy/vacancy-list.module#VacancyModule",
     canActivate: [AuthGuard],
   },
-  { path: "candidate", component: CandidateComponent },
+
+  {
+    path: "vacancy/:id",
+    loadChildren: "./candidate/candidate-list.module#CandidateModule",
+    canActivate: [AuthGuard],
+  },
 
   { path: "interview/registered", component: RegisteredInterviewComponent },
   { path: "login", component: LoginComponent },

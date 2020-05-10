@@ -1,7 +1,8 @@
 export class Candidate {
   id: string;
   fullName: string;
-  email: string;
-  phoneNumber: [];
+  phoneNumber: string;
   status: string;
+  email: string;
+  attachment: string;
 }

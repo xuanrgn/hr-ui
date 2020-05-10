@@ -8,8 +8,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from './auth/login.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { AddCandidateComponent } from "./candidate/add-candidate/add-candidate.component";
-import { CandidateComponent } from "./candidate/candidate.component";
 import { CreateEmployeeComponent } from "./employee/employee-create/create-employee.component";
 import { EmployeeDetailsComponent } from "./employee/employee-form/employee-details.component";
 import { UpdateEmployeeComponent } from "./employee/employee-update/update-employee.component";
@@ -19,7 +17,6 @@ import { RegisteredInterviewComponent } from "./interview/registered/registered-
 import { NavigationComponent } from "./navigation/navigation.component";
 // import { AuthGuard } from './auth/login/auth.guard';
 import { ConfirmDialogComponent } from "./shared/confirm-dialog.component";
-import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
@@ -31,9 +28,6 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     CreateEmployeeComponent,
     EmployeeDetailsComponent,
     UpdateEmployeeComponent,
-    AddVacancyComponent,
-    CandidateComponent,
-    AddCandidateComponent,
     ApprovedInterviewComponent,
     CompletedInterviewComponent,
     RegisteredInterviewComponent,

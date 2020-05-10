@@ -1,0 +1,78 @@
+<div class="modal-header">
+  <h4 class="modal-title">Employee Dialog</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="error" class="alert alert-danger">
+  <p>{{ error }}</p>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-7">
+      <form [formGroup]="form" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="fullName">Fullname of employee*</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="fullName"
+            placeholder="Enter the fullname"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email of employee*</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="email"
+            placeholder="Enter the email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone number of employee</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="phoneNumber"
+            placeholder="Enter the phone number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="position">Position of employee*</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="position"
+            placeholder="Enter the position"
+            required
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn cancel" (click)="activeModal.close(null)">
+    CANCEL
+  </button>
+  <button
+    type="button"
+    class="btn save"
+    [disabled]="!form.valid"
+    (click)="doSave()"
+  >
+    SAVE CHANGES
+  </button>
+</div>
