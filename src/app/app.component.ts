@@ -8,7 +8,7 @@ import { Meta } from '@angular/platform-browser';
 })
 
 export class AppComponent {
-  isAuth = false;
+  isAuth = true;
   title = 'HR Module'
   constructor(private meta: Meta) {
   	  this.meta.addTag({ name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' })
