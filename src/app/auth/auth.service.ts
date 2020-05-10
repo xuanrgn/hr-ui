@@ -18,11 +18,19 @@ export interface AuthResponseData {
 
 @Injectable()
 export class AuthService {
-
+  private isLogin = new Subject<any>();
   private url = 'api';
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   private _authorizedSubject = new Subject<any>();
   constructor(private http: HttpClient) {}
+
+  get isLogined() {
+    return this.isLogin;
+  }
+
+  setIsLogined(val: boolean) {
+    this.isLogin.next(val);
+  }
 
   getToken(): string {
     return localStorage.getItem(TOKEN_NAME);

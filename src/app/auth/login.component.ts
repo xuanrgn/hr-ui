@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Socialusers } from './socialuser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        // private authenticationService: AuthenticationService
+        private authenticationService: AuthService
     ) {
         // redirect to home if already logged in
         // if (this.authenticationService.currentUserValue) {
@@ -42,12 +43,12 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-        this.router.navigate(["/"]);
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
         }
-
+        this.authenticationService.setIsLogined(true);
+        this.router.navigate(["/vacancy"]);
         // this.loading = true;
         // this.authenticationService.login(this.f.username.value, this.f.password.value)
         //     .pipe(first())

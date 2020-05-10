@@ -13,10 +13,11 @@ import { RegisteredInterviewComponent } from "./interview/registered/registered-
 import { throwIfAlreadyLoaded } from "./shared/module-import.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "vacancy", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   {
     path: "employee",
     loadChildren: "./employee/employee-list.module#EmployeeModule",
+    canActivate: [AuthGuard]
   },
   {
     path: "vacancy",
