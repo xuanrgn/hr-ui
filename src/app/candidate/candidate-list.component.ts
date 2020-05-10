@@ -1,32 +1,50 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable } from "rxjs";
 import { CandidateService } from "../service/candidate.service";
 import { ConfirmDialogComponent } from "../shared/confirm-dialog.component";
 import { Candidate } from "./candidate.model";
 import { CandidateDialogComponent } from "./dialog/candidate-dialog.component";
+import { Vacancy } from "../vacancy/vacancy.model";
+import { VacancyService } from "../service/vacancy.service";
 
 @Component({
-  selector: "candidate-list",
+  selector: "app-candidate-list",
   templateUrl: "./candidate-list.component.html",
   styleUrls: ["./candidate-list.component.css"],
 })
 export class CandidateListComponent implements OnInit {
+  id: string;
+  title: string;
+  vacancy: any;
   candidates: Observable<Candidate[]>;
 
   constructor(
-    private service: CandidateService,
+    private route: ActivatedRoute,
     private router: Router,
+    private candidateService: CandidateService,
+    private vacancyService: VacancyService,
     private modalService: NgbModal
   ) {}
 
   ngOnInit() {
+    this.id = this.route.snapshot.params["id"];
+    console.log("VACANCY ID EDIT: ", this.id);
+
+    this.vacancy = this.vacancyService.get(this.id);
+
+    console.log("VACANCY EDIT: ", this.vacancy);
+
+
+
+    this.title = "< UX/UI designer";
+
     this.reloadData();
   }
 
   reloadData() {
-    this.candidates = this.service.getList();
+    this.candidates = this.candidateService.getList();
   }
 
   doEdit(id: number) {
@@ -48,7 +66,7 @@ export class CandidateListComponent implements OnInit {
       "Are you sure you want to delete " + candidate.fullName + "?";
     modalRef.result.then((result) => {
       if (result && result.action && result.action === "yes") {
-        this.service.delete(candidate.id).subscribe(() => this.reloadData());
+        this.candidateService.delete(candidate.id).subscribe(() => this.reloadData());
       }
     });
   }

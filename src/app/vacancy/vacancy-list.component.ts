@@ -30,7 +30,7 @@ export class VacancyListComponent implements OnInit {
   }
 
   doEdit(id: number) {
-    this.router.navigate(["info", id]);
+    this.router.navigate(["/vacancy", id]);
   }
 
   doCreate() {
