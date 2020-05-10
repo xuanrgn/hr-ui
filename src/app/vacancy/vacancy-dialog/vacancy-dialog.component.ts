@@ -1,11 +1,18 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormArray,
+  FormControl,
+} from "@angular/forms";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable } from "rxjs";
 import { Employee } from "src/app/employee/employee";
 import { EmployeeService } from "src/app/service/employee.service";
 import { VacancyService } from "src/app/service/vacancy.service";
 import { Vacancy } from "../vacancy.model";
+import { IDropdownSettings } from "ng-multiselect-dropdown";
 
 @Component({
   selector: "app-vacancy-dialog",
@@ -20,6 +27,16 @@ export class VacancyDialogComponent implements OnInit {
   vacancy: Vacancy;
   @Input() model: Vacancy;
 
+  selectedItems = [];
+  dropdownSettings: IDropdownSettings = {};
+  positions = [
+    { id: 1, desc: "UX/UI Designer" },
+    { id: 2, desc: "Back-End Developer" },
+    { id: 3, desc: "Front-End Developer" },
+    { id: 4, desc: "DevOps" },
+    { id: 5, desc: "Product Manager" },
+  ];
+
   constructor(
     private vacancyService: VacancyService,
     private employeeService: EmployeeService,
@@ -33,6 +50,17 @@ export class VacancyDialogComponent implements OnInit {
     this.employeeService.getEmployeesList().subscribe((val) => {
       this.employees = val;
     });
+
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: "id",
+      textField: "name",
+      selectAllText: "Select All",
+      unSelectAllText: "Unselect All",
+      itemsShowLimit: 3,
+      allowSearchFilter: true,
+    };
+
     this.form.patchValue(this.model);
   }
 
@@ -44,24 +72,34 @@ export class VacancyDialogComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: null,
       name: [null, Validators.required],
-      employees: [null]
+      position: [null, Validators.required],
+      employeeIds: [],
     });
   }
 
   doSave() {
-    this.vacancy.name = this.form.value.name;
-    this.vacancy.employeeIds = this.selectedEmployeeIds;
-
-    console.log("DATA: ", this.vacancy);
-
+    this.form.value.employeeIds = this.selectedEmployeeIds;
+    console.log("DATA: ", this.form.value);
+    return;
     if (this.form.value.id) {
       this.vacancyService
-        .update(this.form.value.id, this.vacancy)
+        .update(this.form.value.id, this.form.value)
         .subscribe(() => this.activeModal.close({ action: "save" }));
     } else {
       this.vacancyService
-        .create(this.vacancy)
+        .create(this.form.value)
         .subscribe(() => this.activeModal.close({ action: "save" }));
     }
+  }
+
+  onItemSelect(item: any) {
+    this.selectedEmployeeIds.push(item.id);
+    console.log("selected: ", this.selectedEmployeeIds);
+  }
+
+  onSelectAll(items: any) {
+    items.forEach((e) => {
+      this.onItemSelect(e);
+    });
   }
 }

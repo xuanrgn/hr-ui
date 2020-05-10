@@ -2,11 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable } from "rxjs";
-import { Employee } from "src/app/employee/employee";
 import { VacancyService } from "../service/vacancy.service";
 import { ConfirmDialogComponent } from "../shared/confirm-dialog.component";
+import { VacancyDialogComponent } from "./vacancy-dialog/vacancy-dialog.component";
 import { Vacancy } from "./vacancy.model";
-import { VacancyDialogComponent } from './vacancy-dialog/vacancy-dialog.component';
 
 @Component({
   selector: "vacancy-list",

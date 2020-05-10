@@ -3,6 +3,7 @@ import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
 import { VacancyDialogComponent } from "./vacancy-dialog/vacancy-dialog.component";
 import { VacancyListComponent } from "./vacancy-list.component";
@@ -18,6 +19,7 @@ const routes: Routes = [
   declarations: [VacancyListComponent, VacancyDialogComponent],
   imports: [
     RouterModule.forChild(routes),
+    NgMultiSelectDropDownModule.forRoot(),
     NgbModule,
     CommonModule,
     FormsModule,

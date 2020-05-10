@@ -28,21 +28,31 @@
           />
         </div>
         <div class="form-group">
-          <label>Employees</label>
-          <select formControlName="employees" class="form-control">
+          <label>Position</label>
+          <select formControlName="position" class="form-control">
             <option
               class="form-control"
-              (onchange)="addEmployee(employee.id)"
-              [value]="employee.id"
-              *ngFor="let employee of employees"
-              >{{ employee.name }}</option
+              [value]="position.desc"
+              *ngFor="let position of positions"
+              >{{ position.desc }}</option
             >
           </select>
         </div>
+        <div class="form-group">
+          <label>Employees</label>
+          <ng-multiselect-dropdown
+            formControlName="employeeIds"
+            [placeholder]="'Select Employees'"
+            [data]="employees"
+            [(ngModel)]="selectedItems"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+          >
+          </ng-multiselect-dropdown>
+        </div>
       </form>
     </div>
-
-
   </div>
 </div>
 <div class="modal-footer">
