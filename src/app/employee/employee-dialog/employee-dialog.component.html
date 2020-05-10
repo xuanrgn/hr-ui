@@ -17,35 +17,45 @@
     <div class="col-7">
       <form [formGroup]="form" class="needs-validation" novalidate>
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="fullname">Fullname of employee*</label>
           <input
             ngbAutofocus
             type="text"
             class="form-control"
-            formControlName="name"
-            placeholder="Enter the name"
+            formControlName="fullname"
+            placeholder="Enter the fullname"
             required
           />
         </div>
         <div class="form-group">
-          <label for="surname">Surname</label>
-          <input
-            ngbAutofocus
-            type="text"
-            class="form-control"
-            formControlName="surname"
-            placeholder="Enter the surname"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email">Email of employee*</label>
           <input
             ngbAutofocus
             type="text"
             class="form-control"
             formControlName="email"
-            placeholder="Enter the Email"
+            placeholder="Enter the email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone number of employee</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="phone"
+            placeholder="Enter the phone number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="position">Position of employee*</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="position"
+            placeholder="Enter the position"
             required
           />
         </div>
@@ -55,7 +65,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn cancel" (click)="activeModal.close(null)">
-    Cancel
+    CANCEL
   </button>
   <button
     type="button"
@@ -63,6 +73,6 @@
     [disabled]="!form.valid"
     (click)="doSave()"
   >
-    Save Employee
+    SAVE CHANGES
   </button>
 </div>

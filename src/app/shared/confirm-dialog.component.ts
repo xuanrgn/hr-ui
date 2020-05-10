@@ -15,8 +15,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
       <p>{{ text }}</p>
     </div>
     <div class="modal-footer">
-      <button type="button btn-danger" class="btn btn-outline-primary" (click)="doYes()">OK</button>
-      <button type="button" class="btn btn-outline-danger" (click)="doCancel()">Cancel</button>
+      <button type="button btn-danger" class="btn btn-outline-danger" (click)="doYes()">DELETE</button>
+      <button type="button" class="btn btn-outline-primary" (click)="doCancel()">CANCEL</button>
     </div>
   `,
 })
