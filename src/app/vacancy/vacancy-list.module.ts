@@ -3,9 +3,15 @@ import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ButtonModule, CheckBoxModule } from "@syncfusion/ej2-angular-buttons";
+import { MultiSelectAllModule } from "@syncfusion/ej2-angular-dropdowns";
+import { NumericTextBoxModule } from "@syncfusion/ej2-angular-inputs";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
-import { VacancyListComponent } from './vacancy-list/vacancy-list.component';
-import { VacancyDialogComponent } from './vacancy-dialog/vacancy-dialog/vacancy-dialog.component';
+import { VacancyDialogComponent } from "./vacancy-dialog/vacancy-dialog.component";
+import { VacancyListComponent } from "./vacancy-list.component";
+
+
+
 
 const routes: Routes = [
   {
@@ -22,6 +28,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    MultiSelectAllModule,
+    NumericTextBoxModule,
+    CheckBoxModule,
+    ButtonModule,
   ],
 
   entryComponents: [VacancyDialogComponent],

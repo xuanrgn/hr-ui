@@ -15,11 +15,11 @@ const routes: Routes = [
   { path: "", redirectTo: "vacancy", pathMatch: "full" },
   {
     path: "employee",
-    loadChildren: "./employee/employee.module#EmployeeModule",
+    loadChildren: "./employee/employee-list.module#EmployeeModule",
   },
   {
     path: "vacancy",
-    loadChildren: "./vacancy/vacancy.module#VacancyModule",
+    loadChildren: "./vacancy/vacancy-list.module#VacancyModule",
   },
   { path: "candidate", component: CandidateComponent },
 
