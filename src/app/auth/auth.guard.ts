@@ -22,10 +22,9 @@ export class AuthGuard implements CanActivate {
          console.log("Token",this.auth.getToken())
             if(this.auth.getToken() != null) {
               return true;
+            } else {
+                this.router.navigate(['login'], { queryParams: { returnUrl: state.url || '/' } });
+                return false;
             }
-        // } else {
-        //     this.router.navigate(['login'], { queryParams: { returnUrl: state.url || '/' } });
-        //     return false;
-        // }
     }
 }
