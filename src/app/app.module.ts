@@ -21,7 +21,6 @@ import { NavigationComponent } from "./navigation/navigation.component";
 import { ConfirmDialogComponent } from "./shared/confirm-dialog.component";
 import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
 import { RegistrationComponent } from './auth/registration/registration.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +37,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     CalendarComponent,
     LoginComponent,
     ConfirmDialogComponent,
-    RegistrationComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
