@@ -11,25 +11,14 @@
       <header>
         <div class="col-3 col1 headerBold">Candidate</div>
         <div class="col-6 col headerBold">Position</div>
+        <div class="col-3 col headerBold">Date</div>
         <!-- <div class="col-4 col text-center headerBold">Actions</div> -->
       </header>
 
-      <div class="row" *ngFor="let candidate of approvedInterview | async">
-        <div class="col-3 col1">{{ candidate.fullName }}</div>
-        <div class="col-6 col">{{ candidate.email }}</div>
-        <div class="col-2 col d-flex justify-content-end">
-          <div class="dropdown show dropleft">
-            <a class="d-flex align-items-center font-weight-bold" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              ...
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item header-bold" (click)="updateEmployee(employee)">EDIT</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger header-bold" (click)="deleteEmployee(employee)">REMOVE</a>
-            </div>
-          </div>
-        </div>
+      <div class="row" *ngFor="let interview of approvedInterview | async">
+        <div class="col-3 col1">{{ interview.candidate.fullName }}</div>
+        <div class="col-6 col">{{ interview.candidate.email }}</div>
+        <div class="col-3 col">{{ interview.interviewDate }}</div>
       </div>
     </section>
   </div>

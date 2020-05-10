@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
     )
   }
 
-  setActive(list:any[]){
+  setActive(list: string){
       this.active = list;
     }
 

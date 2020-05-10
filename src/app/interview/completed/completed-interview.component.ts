@@ -3,6 +3,8 @@ import { CandidateService } from 'src/app/service/candidate.service';
 import { Candidate } from 'src/app/candidate/candidate.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { InterviewService } from 'src/app/service/interview.service';
+import { Interview } from '../interview.model';
 
 @Component({
   selector: 'completed-interview',
@@ -11,10 +13,10 @@ import { map } from 'rxjs/operators';
 })
 export class CompletedInterviewComponent implements OnInit {
 
-  completedInterview: Observable<Candidate[]>;
+  completedInterview: Observable<Interview[]>;
 
   constructor(
-    private candidateService: CandidateService
+    private interviewService: InterviewService
   ) {
 
   }
@@ -24,10 +26,10 @@ export class CompletedInterviewComponent implements OnInit {
   }
 
   reloadData() {
-    this.completedInterview = this.candidateService.getList().pipe(
-      map( candidates =>
-        candidates.filter(
-          (candidate: Candidate) => "COMPLETED" === candidate.status
+    this.completedInterview = this.interviewService.getList().pipe(
+      map( interviews =>
+        interviews.filter(
+          (interview: Interview) => "COMPLETED" === interview.status
         )
       )
     );

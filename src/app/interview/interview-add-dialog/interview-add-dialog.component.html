@@ -1,0 +1,61 @@
+<div class="modal-header">
+  <h4 class="modal-title">Invite for a interview</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="error" class="alert alert-danger">
+  <p>{{ error }}</p>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-7">
+      <form [formGroup]="form" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="interviewDate">Date*</label>
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              ngbDatepicker
+              formControlName="interviewDate"
+              #n="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="n.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address*</label>
+          <input
+            ngbAutofocus
+            type="text"
+            class="form-control"
+            formControlName="address"
+            placeholder="Enter the address"
+            required
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn cancel" (click)="activeModal.close(null)">
+    CANCEL
+  </button>
+  <button
+    type="button"
+    class="btn save"
+    [disabled]="!form.valid"
+    (click)="doSave()"
+  >
+    SAVE CHANGES
+  </button>
+</div>

@@ -3,6 +3,10 @@ import { Observable } from 'rxjs';
 import { Candidate } from 'src/app/candidate/candidate.model';
 import { CandidateService } from 'src/app/service/candidate.service';
 import { map } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { InterviewAddDialogComponent } from '../interview-add-dialog/interview-add-dialog.component';
+import { Interview } from '../interview.model';
+import { InterviewService } from 'src/app/service/interview.service';
 
 @Component({
   selector: 'approved-interview',
@@ -11,10 +15,11 @@ import { map } from 'rxjs/operators';
 })
 export class ApprovedInterviewComponent implements OnInit {
 
-  approvedInterview: Observable<Candidate[]>
+  approvedInterview: Observable<Interview[]>
 
   constructor(
-    private candidateService: CandidateService
+    private interviewService: InterviewService,
+    private modalService: NgbModal
   ) {
 
   }
@@ -24,10 +29,10 @@ export class ApprovedInterviewComponent implements OnInit {
   }
 
   reloadData() {
-    this.approvedInterview = this.candidateService.getList().pipe(
-      map( candidates =>
-        candidates.filter(
-          (candidate: Candidate) => "APPROVED" === candidate.status
+    this.approvedInterview = this.interviewService.getList().pipe(
+      map( interviews =>
+        interviews.filter(
+          (interview: Interview) => "APPROVED" === interview.status
         )
       )
     );

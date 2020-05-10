@@ -21,6 +21,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { InterviewAddDialogComponent } from './interview/interview-add-dialog/interview-add-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +29,10 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     CreateEmployeeComponent,
     EmployeeDetailsComponent,
     UpdateEmployeeComponent,
-    ApprovedInterviewComponent,
-    CompletedInterviewComponent,
-    RegisteredInterviewComponent,
     CalendarComponent,
     LoginComponent,
     ConfirmDialogComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

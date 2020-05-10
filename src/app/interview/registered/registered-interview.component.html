@@ -1,8 +1,8 @@
 <div class="row-card" id="space-between">
   <h2>Registered Interviews</h2>
-  <!-- <button class="add-round-btn" (click)="createEmployee()">
+  <button class="add-round-btn" (click)="newInterView()">
     + New Employee
-  </button> -->
+  </button>
 </div>
 
 <div class="card-column">
@@ -14,9 +14,9 @@
         <!-- <div class="col-4 col text-center headerBold">Actions</div> -->
       </header>
 
-      <div class="row" *ngFor="let candidate of registeredInterview | async">
-        <div class="col-3 col1">{{ candidate.fullName }}</div>
-        <div class="col-6 col">{{ candidate.email }}</div>
+      <div class="row" *ngFor="let interview of registeredInterview | async">
+        <div class="col-3 col1">{{ interview.candidate.fullName }}</div>
+        <div class="col-6 col">{{ interview.candidate.email }}</div>
         <div class="col-2 col d-flex justify-content-end">
           <div class="dropdown show dropleft">
             <a class="d-flex align-items-center font-weight-bold" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,9 +24,9 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item header-bold" (click)="updateEmployee(employee)">EDIT</a>
+              <a class="dropdown-item header-bold" (click)="editDate(interview)">EDIT</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger header-bold" (click)="deleteEmployee(employee)">REMOVE</a>
+              <a class="dropdown-item text-danger header-bold">REMOVE</a>
             </div>
           </div>
         </div>

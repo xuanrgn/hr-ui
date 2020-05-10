@@ -30,12 +30,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
-  { path: "interview/registered", component: RegisteredInterviewComponent },
+  {
+    path: "interview",
+    loadChildren: "./interview/interview.module#InterviewModule",
+    canActivate: [AuthGuard],
+  },
+
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
-  { path: "interview/approved", component: ApprovedInterviewComponent },
-  { path: "interview/completed", component: CompletedInterviewComponent },
-
   {
     path: "calendar",
     component: CalendarComponent,

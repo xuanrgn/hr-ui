@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { CandidateService } from 'src/app/service/candidate.service';
 import { Candidate } from 'src/app/candidate/candidate.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { InterviewAddDialogComponent } from '../interview-add-dialog/interview-add-dialog.component';
+import { Interview } from '../interview.model';
+import { InterviewService } from 'src/app/service/interview.service';
 
 @Component({
   selector: 'registered-interview',
@@ -14,9 +18,12 @@ import { Candidate } from 'src/app/candidate/candidate.model';
 })
 export class RegisteredInterviewComponent implements OnInit {
 
-  registeredInterview: Observable<Candidate[]>;
+  registeredInterview: Observable<Interview[]>;
 
-  constructor(private candidateService: CandidateService) {
+  constructor(
+    private interviewService: InterviewService,
+    private modalService: NgbModal
+  ) {
 
   }
 
@@ -24,14 +31,33 @@ export class RegisteredInterviewComponent implements OnInit {
     this.reloadData();
   }
 
-
   reloadData() {
-    this.registeredInterview = this.candidateService.getList().pipe(
-      map( candidates =>
-        candidates.filter(
-          (candidate: Candidate) => "REGISTERED" === candidate.status
+    this.registeredInterview = this.interviewService.getList().pipe(
+      map( interviews =>
+        interviews.filter(
+          (interview: Interview) => "REGISTERED" === interview.status
         )
       )
     );
+  }
+
+  newInterView() {
+    this.openDialog(new Interview());
+  }
+
+  editDate(interview: Interview){
+    this.openDialog(interview);
+  }
+
+  openDialog(interview: Interview) {
+    const modalRef = this.modalService.open(InterviewAddDialogComponent, {
+      size: "lg",
+    });
+    modalRef.componentInstance.model = interview;
+    modalRef.result.then((result) => {
+      if (result) {
+        this.reloadData();
+      }
+    });
   }
 }
