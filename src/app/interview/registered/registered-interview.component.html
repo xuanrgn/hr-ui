@@ -1,3 +1,36 @@
-<div class="long-title">
-  <h3>Registered Interviews Component</h3>
+<div class="row-card" id="space-between">
+  <h2>Registered Interviews</h2>
+  <!-- <button class="add-round-btn" (click)="createEmployee()">
+    + New Employee
+  </button> -->
+</div>
+
+<div class="card-column">
+  <div class="card">
+    <section>
+      <header>
+        <div class="col-3 col1 headerBold">Candidate</div>
+        <div class="col-6 col headerBold">Position</div>
+        <!-- <div class="col-4 col text-center headerBold">Actions</div> -->
+      </header>
+
+      <div class="row" *ngFor="let employee of registeredInterview">
+        <div class="col-3 col1">{{ employee.fullName }}</div>
+        <div class="col-6 col">{{ employee.position }}</div>
+        <div class="col-2 col d-flex justify-content-end">
+          <div class="dropdown show dropleft">
+            <a class="d-flex align-items-center font-weight-bold" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ...
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item header-bold" (click)="updateEmployee(employee)">EDIT</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger header-bold" (click)="deleteEmployee(employee)">REMOVE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

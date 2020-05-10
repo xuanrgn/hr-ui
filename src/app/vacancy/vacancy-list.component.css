@@ -11,6 +11,9 @@ header,
 .dropdown {
   border-radius: 8px;
 }
+.headerBold {
+  font-weight: 500;
+}
 .col {
   display: flex;
   flex: 1;

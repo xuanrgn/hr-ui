@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/employee/employee';
 
 @Component({
   selector: 'registered-interview',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisteredInterviewComponent implements OnInit {
 
-  employees: string[];
+  registeredInterview: Employee[] = [];
 
   constructor() { }
 
   ngOnInit() {
-    this.employees
+    var emp = new Employee();
+    emp.fullName = "Miras"
+    emp.position = "Project Manager"
+    this.registeredInterview.push(emp)
   }
 
 }

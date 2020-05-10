@@ -10,7 +10,13 @@
       <div class="navbar" *ngIf="isAuth">
         <div class="content">
           <a href="#"> <img src="../assets/search.svg" alt="" /></a>
-          <a href="#"> <img src="../assets/ava.svg" alt="" /></a>
+          <a type="button" class="dropleft" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="../assets/ava.svg" alt="" />
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" (click)="signOut()">Sign Out</a>
+            </div>
+          </a>
         </div>
     </div>
     <router-outlet></router-outlet>

@@ -52,6 +52,8 @@ export class AuthService {
   }
   signOut(): any {
     localStorage.removeItem(TOKEN_NAME);
+    this.setIsLogined(false);
+    this.router.navigate(["/login"]);
   }
 
   getTokenExpirationDate(token: string): Date {

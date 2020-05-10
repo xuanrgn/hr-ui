@@ -13,15 +13,29 @@ export class AppComponent {
   title = 'HR Module'
   constructor(private meta: Meta, private authService: AuthService) {
       this.meta.addTag({ name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' })
-      if ( authService.getToken != null) {
+      if (this.authService.getToken() != null) {
         this.isAuth = true;
       } else {
         this.isAuth = false;
       }
+      this.authService.isLogined.subscribe(
+        (val) => {
+          console.log("isLogined", val);
+          if (this.authService.getToken() != null) {
+            this.isAuth = true;
+          } else {
+            this.isAuth = false;
+          }
+        }
+      )
       // this.authService.isLogined.subscribe(
       //   (val) => {
       //     this.isAuth = val;
       //   }
       // );
+  }
+
+  signOut(){
+    this.authService.signOut();
   }
 }
