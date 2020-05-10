@@ -5,9 +5,9 @@
 <router-outlet></router-outlet> -->
 
 <div class="container_">
-    <app-navigation></app-navigation>
+    <app-navigation *ngIf="isAuth"></app-navigation>
     <div class="column">
-      <div class="navbar">
+      <div class="navbar" *ngIf="isAuth">
         <div class="content">
           <a href="#"> <img src="../assets/search.svg" alt="" /></a>
           <a href="#"> <img src="../assets/ava.svg" alt="" /></a>

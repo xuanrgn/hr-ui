@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
@@ -21,7 +21,9 @@ import { NavigationComponent } from "./navigation/navigation.component";
 import { ConfirmDialogComponent } from "./shared/confirm-dialog.component";
 import { AddVacancyComponent } from "./vacancy/add-vacancy/add-vacancy.component";
 import { RegistrationComponent } from './auth/registration/registration.component';
-
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     CalendarComponent,
     LoginComponent,
     ConfirmDialogComponent,
-    RegistrationComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,14 @@ import { RegistrationComponent } from './auth/registration/registration.componen
   ],
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class AppModule {}

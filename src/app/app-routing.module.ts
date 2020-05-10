@@ -10,6 +10,7 @@ import { RegisteredInterviewComponent } from "./interview/registered/registered-
 import { throwIfAlreadyLoaded } from "./shared/module-import.guard";
 import { LoginComponent } from './auth/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: "", redirectTo: "vacancy", pathMatch: "full" },
@@ -20,6 +21,7 @@ const routes: Routes = [
   {
     path: "vacancy",
     loadChildren: "./vacancy/vacancy-list.module#VacancyModule",
+    canActivate: [AuthGuard]
   },
   { path: "candidate", component: CandidateComponent },
 
@@ -29,7 +31,10 @@ const routes: Routes = [
   { path: "interview/approved", component: ApprovedInterviewComponent },
   { path: "interview/completed", component: CompletedInterviewComponent },
 
-  { path: "calendar", component: CalendarComponent },
+  {
+    path: "calendar", component: CalendarComponent,
+    canActivate: [AuthGuard]
+  },
 
   { path: "update/:id", component: UpdateEmployeeComponent },
   { path: "details/:id", component: EmployeeDetailsComponent },

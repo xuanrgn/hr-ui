@@ -20,7 +20,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule,
     DxSchedulerModule,
-    HttpClientModule
+    HttpClientModule,
+
   ]
 })
 export class CalendarModule {

@@ -1,0 +1,19 @@
+.card-body{
+  background-color: #ffffff;
+}
+.card-header {
+  background-color: #ffffff;
+  border: 0ch;
+}
+.card {
+  border: 0ch;
+}
+input {
+  background: #FAFAFA;
+}
+h1 {
+  text-align: center;
+}
+.btn-primary {
+  background-color: #4D77FB;
+}
