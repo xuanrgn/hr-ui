@@ -32,7 +32,7 @@ export class EmployeeListComponent implements OnInit {
 
   deleteEmployee(employee: Employee) {
     const modalRef = this.modalService.open(ConfirmDialogComponent);
-    modalRef.componentInstance.text = 'Are you sure you want to delete ' + employee.name + '?';
+    modalRef.componentInstance.text = 'Are you sure you want to delete ' + employee.fullName + '?';
     modalRef.result.then(result => {
       if (result && result.action && result.action === 'yes') {
         this.employeeService.deleteEmployee(employee.id).subscribe(() => this.reloadData());
