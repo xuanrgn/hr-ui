@@ -8,6 +8,7 @@ import { Vacancy } from '../vacancy/vacancy.model';
 })
 export class NavigationComponent implements OnInit {
 
+  public active = "Vacancies"
   vacancyList: Vacancy[] = [];
   constructor(private vacancyService: VacancyService) { }
 
@@ -18,5 +19,9 @@ export class NavigationComponent implements OnInit {
       }
     )
   }
+
+  setActive(list:any[]){
+      this.active = list;
+    }
 
 }

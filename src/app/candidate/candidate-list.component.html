@@ -1,19 +1,15 @@
 <div class="row-card" id="space-between">
-  <h2>Vacancies</h2>
+  <h2>{{title}}</h2>
   <button class="add-round-btn" (click)="doCreate()">
-    + New Vacancy
+    + New Candidate
   </button>
 </div>
 
 <div class="card-column">
   <div class="card">
     <section>
-      <header>
-        <div class="col-2 col1">Vacancy</div>
-      </header>
-
-      <div class="row" *ngFor="let vacancy of vacancies | async">
-        <div class="col-8 col1">{{ vacancy.name }}</div>
+      <div class="row" *ngFor="let candidate of candidates | async">
+        <div class="col-8 col1">{{ candidate.fullName }}</div>
 
         <div class="col-3 col d-flex justify-content-end">
           <div class="dropdown show dropleft">
@@ -22,9 +18,9 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item header-bold" (click)="doUpdate(vacancy)">EDIT</a>
+              <a class="dropdown-item header-bold" (click)="doEdit(candidate.id)">EDIT</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger header-bold" (click)="doDelete(vacancy)">REMOVE</a>
+              <a class="dropdown-item text-danger header-bold" (click)="doDelete(candidate)">REMOVE</a>
             </div>
           </div>
         </div>
