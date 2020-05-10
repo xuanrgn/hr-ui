@@ -47,6 +47,7 @@ export class VacancyDialogComponent implements OnInit {
 
     this.dropdownSettings = {
       singleSelection: false,
+      enableCheckAll: false,
       idField: "id",
       textField: "fullName",
       selectAllText: "Select All",
@@ -55,7 +56,6 @@ export class VacancyDialogComponent implements OnInit {
       allowSearchFilter: true,
       noDataAvailablePlaceholderText: "Employees not found",
     };
-
     this.form.patchValue(this.model);
   }
 
@@ -75,7 +75,6 @@ export class VacancyDialogComponent implements OnInit {
   doSave() {
     this.form.value.employeeIds = this.selectedEmployeeIds;
     console.log("DATA: ", this.form.value);
-    return;
     if (this.form.value.id) {
       this.vacancyService
         .update(this.form.value.id, this.form.value)
