@@ -31,8 +31,8 @@ export class EmployeeDialogComponent implements OnInit {
   createForm() {
     this.form = this.formBuilder.group({
       id: null,
-      fullname: [null, Validators.required],
-      phone: [null,],
+      fullName: [null, Validators.required],
+      phoneNumber: [null,],
       email: [null, Validators.required],
       position: [null, Validators.required],
     });

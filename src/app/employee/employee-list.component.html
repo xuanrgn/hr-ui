@@ -17,9 +17,9 @@
       </header>
 
       <div class="row" *ngFor="let employee of employees | async">
-        <div class="col-2 col1">{{ employee.name }}</div>
+        <div class="col-2 col1">{{ employee.fullName }}</div>
         <div class="col-2 col">{{ employee.position }}</div>
-        <div class="col-2 col">{{ employee.phone }}</div>
+        <div class="col-2 col">{{ employee.phoneNumber }}</div>
         <div class="col-2 col">{{ employee.email }}</div>
         <div class="col-3 col d-flex justify-content-end">
           <div class="dropdown show dropleft">
