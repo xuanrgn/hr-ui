@@ -8,6 +8,7 @@ import { Candidate } from "./candidate.model";
 import { CandidateDialogComponent } from "./dialog/candidate-dialog.component";
 import { Vacancy } from "../vacancy/vacancy.model";
 import { VacancyService } from "../service/vacancy.service";
+import { Employee } from "../employee/employee";
 
 @Component({
   selector: "app-candidate-list",
@@ -18,6 +19,7 @@ export class CandidateListComponent implements OnInit {
   id: string;
   title: string;
   vacancy: any;
+  employeesIds: string[];
   candidates: Observable<Candidate[]>;
 
   constructor(
@@ -32,13 +34,12 @@ export class CandidateListComponent implements OnInit {
     this.id = this.route.snapshot.params["id"];
     console.log("VACANCY ID EDIT: ", this.id);
 
-    this.vacancy = this.vacancyService.get(this.id);
+    this.vacancyService.get(this.id).subscribe((res) => {
+      this.title = "< " + res.name;
+      this.employeesIds = res.employeesIds;
+    });
 
-    console.log("VACANCY EDIT: ", this.vacancy);
-
-
-
-    this.title = "< UX/UI designer";
+    console.log("employees: ", this.employeesIds);
 
     this.reloadData();
   }
@@ -66,7 +67,9 @@ export class CandidateListComponent implements OnInit {
       "Are you sure you want to delete " + candidate.fullName + "?";
     modalRef.result.then((result) => {
       if (result && result.action && result.action === "yes") {
-        this.candidateService.delete(candidate.id).subscribe(() => this.reloadData());
+        this.candidateService
+          .delete(candidate.id)
+          .subscribe(() => this.reloadData());
       }
     });
   }
