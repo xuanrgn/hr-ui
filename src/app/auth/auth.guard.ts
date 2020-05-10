@@ -4,15 +4,24 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+    isLogined: boolean;
     constructor(
         private router: Router,
         private auth: AuthService,
-    ) { }
+    ) {
+      this.auth.isLogined.subscribe(
+        (val) => {
+          this.isLogined = val;
+        }
+      )
+    }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         console.log('OnlyLoggedInUsers');
        // if (!this.auth.isTokenExpired()) {
-            return true;
+            if(this.auth.getToken() != null) {
+              return true;
+            }
         // } else {
         //     this.router.navigate(['login'], { queryParams: { returnUrl: state.url || '/' } });
         //     return false;

@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import * as jwt_decode from 'jwt-decode';
 import { catchError, map, tap } from 'rxjs/operators';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 export const TOKEN_NAME = 'jwt_token';
 
@@ -18,11 +19,26 @@ export interface AuthResponseData {
 
 @Injectable()
 export class AuthService {
-
+  private isLogin = new Subject<any>();
+  private isLoginBool = false;
   private url = 'api';
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   private _authorizedSubject = new Subject<any>();
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+  get isLogined() {
+    return this.isLogin;
+  }
+
+  setIsLogined(val: boolean) {
+    this.isLogin.next(val);
+    this.isLoginBool = val;
+    this.router.navigate(["/vacancy"]);
+  }
+
+  getLogined(): boolean {
+    return this.isLoginBool;
+  }
 
   getToken(): string {
     return localStorage.getItem(TOKEN_NAME);

@@ -16,9 +16,9 @@ export class CalendarComponent implements OnInit {
         setTimeout(() => {
           $("#calendar").fullCalendar({
                           header: {
-                              left   : 'prev,next today',
-                              center : 'title',
-                              right  : 'month,agendaWeek,agendaDay'
+                              left   : 'title',
+                              center : 'month,agendaWeek,agendaDay',
+                              right  : 'prev,next today'
                           },
                           navLinks   : true,
                           editable   : true,
