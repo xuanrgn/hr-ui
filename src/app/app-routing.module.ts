@@ -13,6 +13,7 @@ import { throwIfAlreadyLoaded } from "./shared/module-import.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "vacancy", pathMatch: "full" },
+  
   {
     path: "employee",
     loadChildren: "./employee/employee-list.module#EmployeeModule",
@@ -31,6 +32,12 @@ const routes: Routes = [
   },
 
   {
+    path: "vacancy/candidate/:id",
+    loadChildren: "./candidate-detail/candidate-detail.module#CandidateDetailModule",
+    canActivate: [AuthGuard],
+  },
+
+  {
     path: "interview",
     loadChildren: "./interview/interview.module#InterviewModule",
     canActivate: [AuthGuard],
@@ -38,6 +45,7 @@ const routes: Routes = [
 
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
+  
   {
     path: "calendar",
     component: CalendarComponent,

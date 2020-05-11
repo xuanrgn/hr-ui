@@ -55,7 +55,7 @@ export class CandidateListComponent implements OnInit {
   }
 
   doEdit(id: number) {
-    this.router.navigate(["/vacancy"]);
+    this.router.navigate(["/vacancy/candidate", id]);
   }
 
   doCreate() {
