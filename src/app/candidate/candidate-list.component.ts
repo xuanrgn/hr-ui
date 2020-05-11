@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, NgModuleRef } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable } from "rxjs";
@@ -49,7 +49,7 @@ export class CandidateListComponent implements OnInit {
   }
 
   doEdit(id: number) {
-    this.router.navigate(["info", id]);
+    this.router.navigate(["/vacancy"]);
   }
 
   doCreate() {
@@ -79,6 +79,7 @@ export class CandidateListComponent implements OnInit {
       size: "lg",
     });
     modalRef.componentInstance.model = candidate;
+    modalRef.componentInstance.vacancy = this.vacancy;
     modalRef.result.then((result) => {
       if (result) {
         this.reloadData();

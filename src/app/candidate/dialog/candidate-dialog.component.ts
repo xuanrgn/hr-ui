@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { Employee } from "src/app/employee/employee";
+import { Component, Input, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { EmployeeService } from "src/app/service/employee.service";
 import { CandidateService } from "src/app/service/candidate.service";
+import { Candidate } from "../candidate.model";
+import { Vacancy } from 'src/app/vacancy/vacancy.model';
 
 @Component({
   selector: "app-candidate-dialog",
@@ -13,7 +13,8 @@ import { CandidateService } from "src/app/service/candidate.service";
 export class CandidateDialogComponent implements OnInit {
   form: FormGroup;
   error = null;
-  @Input() model: Employee;
+  @Input() model: Candidate;
+  @Input() vacancy: Vacancy;
 
   constructor(
     private candidateService: CandidateService,

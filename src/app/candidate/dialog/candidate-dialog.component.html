@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Employee Dialog</h4>
+  <h4 class="modal-title">Candidate Dialog</h4>
   <button
     type="button"
     class="close"
@@ -17,7 +17,7 @@
     <div class="col-7">
       <form [formGroup]="form" class="needs-validation" novalidate>
         <div class="form-group">
-          <label for="fullName">Fullname of employee*</label>
+          <label for="fullName">Fullname of candidate*</label>
           <input
             ngbAutofocus
             type="text"
@@ -28,7 +28,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="email">Email of employee*</label>
+          <label for="email">Email of candidate*</label>
           <input
             ngbAutofocus
             type="text"
@@ -39,7 +39,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="phoneNumber">Phone number of employee</label>
+          <label for="phoneNumber">Phone number of candidate</label>
           <input
             ngbAutofocus
             type="text"
@@ -49,13 +49,13 @@
           />
         </div>
         <div class="form-group">
-          <label for="position">Position of employee*</label>
+          <label for="position">Reume of candidate*</label>
           <input
             ngbAutofocus
             type="text"
             class="form-control"
-            formControlName="position"
-            placeholder="Enter the position"
+            formControlName="resume"
+            placeholder="Enter the resume of candidate"
             required
           />
         </div>
