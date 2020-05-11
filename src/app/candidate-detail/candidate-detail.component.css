@@ -1,0 +1,41 @@
+
+
+.card{
+  overflow: hidden;
+}
+
+.back {
+  align-self: center;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+
+/*.back:hover {
+  color: rgb(77, 119, 251, 0.7);
+}*/
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title h2:hover {
+  color: rgb(77, 119, 251);
+  cursor: pointer;
+}
+
+.add-round-btn:hover .icon{
+  filter:  grayscale(100%) brightness(0%) invert(100%);
+}
+
+
+.row-card {
+  padding-bottom: 0;
+}
+
+.col-7 {
+  padding-left: 50px;
+}

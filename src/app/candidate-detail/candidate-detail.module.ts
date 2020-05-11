@@ -6,7 +6,7 @@ import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
 import { CandidateDetailComponent } from "./candidate-detail.component";
 import { RouterModule, Routes } from "@angular/router";
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -18,6 +18,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [CandidateDetailComponent],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forChild(routes)
   ]

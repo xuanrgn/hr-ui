@@ -9,7 +9,7 @@ import { CandidateDialogComponent } from "./dialog/candidate-dialog.component";
 import { Vacancy } from "../vacancy/vacancy.model";
 import { VacancyService } from "../service/vacancy.service";
 import { Employee } from "../employee/employee";
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: "app-candidate-list",
