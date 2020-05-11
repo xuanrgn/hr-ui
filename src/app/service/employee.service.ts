@@ -16,6 +16,7 @@ export class EmployeeService {
 
   // tslint:disable-next-line: ban-types
   createEmployee(employee: Object): Observable<Object> {
+    console.log(employee);
     return this.http.post(`${this.baseUrl}`, employee);
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Component, Input } from '@angular/core';
+import { Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators , ReactiveFormsModule} from "@angular/forms";
 import { Candidate } from "../candidate/candidate.model";
@@ -31,9 +31,6 @@ export class CandidateDetailComponent implements OnInit {
     this._location.back();
   }
 
-    ngOnInit() {
-  }
-
   createForm() {
     this.form = this.formBuilder.group({
       id: null,
@@ -44,15 +41,5 @@ export class CandidateDetailComponent implements OnInit {
     });
   }
 
-  doSave() {
-    if (this.form.value.id) {
-      this.candidateService
-        .update(this.form.value.id, this.form.value)
-        .subscribe((result) => this.activeModal.close({ action: "save" }));
-    } else {
-      this.candidateService
-        .create(this.form.value)
-        .subscribe((result) => this.activeModal.close({ action: "save" }));
-    }
-  }
+  doSave(){}
 }
