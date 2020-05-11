@@ -9,6 +9,7 @@ import { CandidateDialogComponent } from "./dialog/candidate-dialog.component";
 import { Vacancy } from "../vacancy/vacancy.model";
 import { VacancyService } from "../service/vacancy.service";
 import { Employee } from "../employee/employee";
+import {Location} from '@angular/common';
 
 @Component({
   selector: "app-candidate-list",
@@ -22,7 +23,7 @@ export class CandidateListComponent implements OnInit {
   employeesIds: string[];
   candidates: Observable<Candidate[]>;
 
-  constructor(
+  constructor(private _location: Location,
     private route: ActivatedRoute,
     private router: Router,
     private candidateService: CandidateService,
@@ -35,13 +36,18 @@ export class CandidateListComponent implements OnInit {
     console.log("VACANCY ID EDIT: ", this.id);
 
     this.vacancyService.get(this.id).subscribe((res) => {
-      this.title = "< " + res.name;
+      this.title = res.name;
       this.employeesIds = res.employeesIds;
     });
 
     console.log("employees: ", this.employeesIds);
 
     this.reloadData();
+  }
+
+
+  backClicked() {
+    this._location.back();
   }
 
   reloadData() {
