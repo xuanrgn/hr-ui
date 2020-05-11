@@ -49,7 +49,3 @@ section {
   /*overflow: hidden;*/
 }
 
-.row:hover {
-  cursor: pointer;
-  background-color: rgb(223,227,230, 0.8);
-}
