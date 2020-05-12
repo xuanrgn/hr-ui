@@ -1,8 +1,7 @@
 
 <div class="col-md-6 offset-md-3 mt-5">
   
-  <div class="card" style="overflow: hidden;">
-    <img src="../assets/2555355.jpg" alt="" height="auto" width="100%" />
+    <img src="../assets/2555355.jpg" alt="" height="auto" width="100%">
       <h4 class="card-header">Sign in</h4>
       <div class="card-body">
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -35,6 +34,5 @@
               <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
           </form>
       </div>
-  </div>
 </div>
 
