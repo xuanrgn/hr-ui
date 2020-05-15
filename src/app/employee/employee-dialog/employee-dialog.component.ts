@@ -47,12 +47,14 @@ export class EmployeeDialogComponent implements OnInit {
       this.employeeService
         .createEmployee(this.form.value)
         .subscribe((result) => this.activeModal.close({ action: "save" }));
-
+        console.log(this.form.value);
     }
   }
 
   saveFromFile(rec : Employee) {
-      this.employeeService.createEmployee(rec);
+      this.employeeService
+        .createEmployee(rec)
+        .subscribe((result) => this.activeModal.close({ action: "save" }));
         console.log(rec);
   }
 
@@ -96,7 +98,7 @@ export class EmployeeDialogComponent implements OnInit {
       let curruntRecord = (<string>csvRecordsArray[i]).split(',');  
       if (curruntRecord.length == headerLength) {  
         let csvRecord: Employee = new Employee();  
-        csvRecord.id = null;  
+        // csvRecord.id = curruntRecord[0].trim();  
         csvRecord.fullName = curruntRecord[1].trim();   
         csvRecord.phoneNumber = curruntRecord[2].trim();  
         csvRecord.email = curruntRecord[3].trim();  

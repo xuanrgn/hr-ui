@@ -24,7 +24,7 @@ export class CandidateDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.form.patchValue(this.model);
+    // this.form.patchValue(this.model);
   }
 
   backClicked() {
