@@ -33,6 +33,7 @@ export class RegisteredInterviewComponent implements OnInit {
     this.registeredInterview.subscribe(() => this.showSpinner = false)
   }
 
+
   reloadData() {
     this.registeredInterview = this.interviewService.getList().pipe(
       map( interviews =>
