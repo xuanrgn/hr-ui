@@ -7,8 +7,8 @@
 
 <div class="card-column">
   <div class="card">
+    <app-loading-spinner *ngIf = "showSpinner"></app-loading-spinner>
     <section>
-      <!-- <app-loading-spinner *ngIf = "showSpinner"></app-loading-spinner> -->
       <div class="row" *ngFor="let vacancy of vacancies | async" (click)="doEdit(vacancy.id)">
         <div class="col-8 col1">{{ vacancy.name }}</div>
           <div class="remove" style="color: red;" (click)="doDelete(vacancy);$event.stopPropagation()">x

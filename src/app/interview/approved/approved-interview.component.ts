@@ -16,6 +16,7 @@ import { InterviewService } from 'src/app/service/interview.service';
 export class ApprovedInterviewComponent implements OnInit {
 
   approvedInterview: Observable<Interview[]>
+  showSpinner: boolean = true;
 
   constructor(
     private interviewService: InterviewService,
@@ -26,6 +27,7 @@ export class ApprovedInterviewComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
+    this.approvedInterview.subscribe(() => this.showSpinner = false)
   }
 
   reloadData() {
