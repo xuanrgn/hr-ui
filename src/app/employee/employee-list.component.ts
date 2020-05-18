@@ -14,6 +14,7 @@ import { EmployeeService } from '../service/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Observable<Employee[]>;
+  showSpinner: boolean = true;
 
   constructor(
     private employeeService: EmployeeService,
@@ -27,6 +28,7 @@ export class EmployeeListComponent implements OnInit {
 
   reloadData() {
     this.employees = this.employeeService.getEmployeesList();
+    this.employees.subscribe(() => this.showSpinner = false)
     console.log("employees", this.employees);
   }
 
