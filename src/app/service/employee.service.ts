@@ -30,6 +30,9 @@ export class EmployeeService {
   }
 
   getEmployeesList(): Observable<any> {
+        console.log("****");
+    console.log(this.baseUrl);
     return this.http.get(`${this.baseUrl}`);
+
   }
 }

@@ -22,6 +22,8 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { InterviewAddDialogComponent } from './interview/interview-add-dialog/interview-add-dialog.component';
+// import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoadingSpinnerModule } from './loading-spinner/loading-spinner.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { InterviewAddDialogComponent } from './interview/interview-add-dialog/in
     LoginComponent,
     ConfirmDialogComponent,
     RegistrationComponent,
+    // LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,10 @@ import { InterviewAddDialogComponent } from './interview/interview-add-dialog/in
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
+    LoadingSpinnerModule,
   ],
+  exports: [],
+
   entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent],
   providers: [

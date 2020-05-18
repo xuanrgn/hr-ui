@@ -7,6 +7,7 @@ import { ConfirmDialogComponent } from "../shared/confirm-dialog.component";
 import { VacancyDialogComponent } from "./vacancy-dialog/vacancy-dialog.component";
 import { Vacancy } from "./vacancy.model";
 
+
 @Component({
   selector: "vacancy-list",
   templateUrl: "./vacancy-list.component.html",
@@ -15,6 +16,7 @@ import { Vacancy } from "./vacancy.model";
 export class VacancyListComponent implements OnInit {
   vacancies: Observable<Vacancy[]>;
 
+  showSpinner: boolean = true;
   constructor(
     private vacancyService: VacancyService,
     private router: Router,
@@ -27,6 +29,7 @@ export class VacancyListComponent implements OnInit {
 
   reloadData() {
     this.vacancies = this.vacancyService.getList();
+    this.vacancies.subscribe(() => this.showSpinner = false)
   }
 
   doEdit(id: number) {
