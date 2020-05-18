@@ -7,6 +7,7 @@ import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
 import { VacancyDialogComponent } from "./vacancy-dialog/vacancy-dialog.component";
 import { VacancyListComponent } from "./vacancy-list.component";
+import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    LoadingSpinnerModule
   ],
 
   entryComponents: [VacancyDialogComponent],

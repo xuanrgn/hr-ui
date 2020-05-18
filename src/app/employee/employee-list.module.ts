@@ -6,6 +6,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { throwIfAlreadyLoaded } from "../shared/module-import.guard";
 import { EmployeeDialogComponent } from "./employee-dialog/employee-dialog.component";
 import { EmployeeListComponent } from "./employee-list.component";
+import { LoadingSpinnerModule } from '../loading-spinner/loading-spinner.module';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    LoadingSpinnerModule
   ],
 
   entryComponents: [EmployeeDialogComponent],
