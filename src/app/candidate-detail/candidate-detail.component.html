@@ -1,23 +1,18 @@
-<div class="modal-header">
-  <h4 class="modal-title">Employee Dialog</h4>
-  <button
-    type="button"
-    class="close"
-    aria-label="Close"
-    (click)="activeModal.dismiss('Cross click')"
-  >
-    <span aria-hidden="true">&times;</span>
+<div class="row-card" id="space-between">
+  <div class="title"><div class="back" (click)="backClicked()"><h2>< Name of employee's profile</h2></div>
+  <h2 (click)="backClicked()"></h2></div>
+    <button class="add-round-btn">
+    	<a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt="" /></a>
+    	EDIT
   </button>
 </div>
-<div *ngIf="error" class="alert alert-danger">
-  <p>{{ error }}</p>
-</div>
 <div class="modal-body">
+  
   <div class="row">
     <div class="col-7">
       <form [formGroup]="form" class="needs-validation" novalidate>
         <div class="form-group">
-          <label for="fullName">Fullname of employee*</label>
+          <label for="fullName">Fullname</label>
           <input
             ngbAutofocus
             type="text"
@@ -28,7 +23,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="email">Email of employee*</label>
+          <label for="email">Email</label>
           <input
             ngbAutofocus
             type="text"
@@ -39,7 +34,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="phoneNumber">Phone number of employee</label>
+          <label for="phoneNumber">Phone</label>
           <input
             ngbAutofocus
             type="text"
@@ -49,31 +44,34 @@
           />
         </div>
         <div class="form-group">
-          <label for="position">Position of employee*</label>
+          <label for="position">Resume</label>
           <input
             ngbAutofocus
             type="text"
             class="form-control"
-            formControlName="position"
-            placeholder="Enter the position"
+            formControlName="resume"
+            placeholder="Enter the resume of candidate"
             required
           />
         </div>
+          <div class="comments">
+		  	<div class="form-group">
+		          <label for="position">Comments</label>
+		          <input
+		            ngbAutofocus
+		            type="text"
+		            class="form-control"
+		            formControlName="resume"
+		            placeholder="Enter the comments"
+		            required
+		          />
+		        </div>
+		  </div>
       </form>
     </div>
   </div>
+
+
 </div>
-<div class="modal-footer">
-  <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" class= "upload">
-  <button type="button" class="btn cancel" (click)="activeModal.close(null)">
-    CANCEL
-  </button>
-  <button
-    type="button"
-    class="btn save"
-    [disabled]="!form.valid"
-    (click)="doSave()"
-  >
-    SAVE CHANGES
-  </button>
-</div>
+
+

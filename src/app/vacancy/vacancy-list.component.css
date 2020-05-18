@@ -33,6 +33,22 @@ section {
   width: 100%;
 }
 
+.row {
+  justify-content: space-between;
+}
+
+.row:hover {
+  cursor: pointer;
+  background-color: rgb(223,227,230, 0.8);
+}
+
+.card{
+  overflow: hidden;
+}
+
+.remove {
+  margin-right: 5%;
+}
 .btn {
   padding: 10px;
   align-items: center;
@@ -42,5 +58,8 @@ section {
   box-sizing: border-box;
   border-radius: 8px;
   cursor: pointer;
+}
+.dropdown-menu {
+  z-index: 20;
 }
 
