@@ -6,6 +6,7 @@ import { Candidate } from "../candidate/candidate.model";
 import { Vacancy } from 'src/app/vacancy/vacancy.model';
 import { ActivatedRoute } from '@angular/router';
 import { CandidateService } from '../service/candidate.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-candidate-detail',
@@ -24,16 +25,27 @@ export class CandidateDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private _location: Location,
     private candidateService: CandidateService,
-  	private formBuilder: FormBuilder) { 
+  	private formBuilder: FormBuilder) {
   	this.createForm();
   }
 
   ngOnInit() {
     this.id = this.route.snapshot.params["id"];
+    this.candidateService.getList()
+    .pipe(
+      map((res: Candidate[]) => {
+        return res.filter((candidate: Candidate) => candidate.id === this.id)
+      })
+    ).subscribe( (res) => {
+      console.log(res[0]);
+      this.form.patchValue(res[0]);
+    });
     // this.form.patchValue(this.model);
-    this.candidateService.get(this.id).subscribe((res) => {
-      
-    })
+    // TODO
+    // this.candidateService.get(this.id).subscribe((res) => {
+    //   this.form.patchValue(res);
+    // })
+
   }
 
   backClicked() {
