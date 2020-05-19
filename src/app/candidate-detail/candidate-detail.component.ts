@@ -31,6 +31,7 @@ export class CandidateDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.form.disable();
     this.editable = false;
     this.id = this.route.snapshot.params["id"];
     this.candidateService.getList()
