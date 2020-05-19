@@ -14,6 +14,7 @@ import { Interview } from '../interview.model';
 export class CompletedInterviewComponent implements OnInit {
 
   completedInterview: Observable<Interview[]>;
+  showSpinner: boolean = true;
 
   constructor(
     private interviewService: InterviewService
@@ -23,6 +24,8 @@ export class CompletedInterviewComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
+    this.completedInterview.subscribe(() => this.showSpinner = false)
+
   }
 
   reloadData() {

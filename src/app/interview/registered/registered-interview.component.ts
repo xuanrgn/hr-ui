@@ -19,6 +19,7 @@ import { InterviewService } from 'src/app/service/interview.service';
 export class RegisteredInterviewComponent implements OnInit {
 
   registeredInterview: Observable<Interview[]>;
+  showSpinner: boolean = true;
 
   constructor(
     private interviewService: InterviewService,
@@ -29,7 +30,9 @@ export class RegisteredInterviewComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
+    this.registeredInterview.subscribe(() => this.showSpinner = false)
   }
+
 
   reloadData() {
     this.registeredInterview = this.interviewService.getList().pipe(

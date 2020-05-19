@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CandidateModule } from '../candidate/candidate-list.module';
 import { throwIfAlreadyLoaded } from '../shared/module-import.guard';
-
+import {LoadingSpinnerModule} from '../loading-spinner/loading-spinner.module'
 const routes: Routes = [
   {
     path: "registered",
@@ -40,6 +40,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    LoadingSpinnerModule,
   ],
 
   entryComponents: [InterviewAddDialogComponent],
