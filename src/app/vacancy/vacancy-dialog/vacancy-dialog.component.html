@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Employee Dialog</h4>
+  <h4 class="modal-title">Create Vacancy</h4>
   <button
     type="button"
     class="close"
@@ -14,7 +14,7 @@
 </div>
 <div class="modal-body">
   <div class="row">
-    <div class="col-7">
+    <div class="col-10">
       <form [formGroup]="form" class="needs-validation" novalidate>
         <div class="form-group">
           <label for="name">Name of vacancy</label>
@@ -24,6 +24,17 @@
             class="form-control"
             formControlName="name"
             placeholder="Enter the name"
+            required
+          />
+        </div>
+        <div class="form-group" id="desc">
+          <label>Description</label>
+          <input
+            ngbAutofocus
+            type="textarea"
+            class="form-control"
+            formControlName="description"
+            placeholder="Enter the description"
             required
           />
         </div>

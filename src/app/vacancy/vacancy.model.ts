@@ -7,4 +7,5 @@ export class Vacancy {
   position: string;
   employeeIds: string[];
   candidateIds: string[];
+  description: string;
 }

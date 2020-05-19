@@ -16,3 +16,7 @@
   color: #4d77fb;
   font-weight: 300;
 }
+
+#desc .form-control{
+  height: calc(8.5em + 0.75rem + 2px);
+}

@@ -19,6 +19,7 @@ import { Location } from '@angular/common';
 export class CandidateListComponent implements OnInit {
   id: string;
   title: string;
+  description: string;
   vacancy: any;
   employeesIds: string[];
   candidates: Observable<Candidate[]>;
@@ -38,6 +39,8 @@ export class CandidateListComponent implements OnInit {
     this.vacancyService.get(this.id).subscribe((res) => {
       this.title = res.name;
       this.employeesIds = res.employeesIds;
+      this.description = res.description;
+      console.log(res);
     });
 
     console.log("employees: ", this.employeesIds);

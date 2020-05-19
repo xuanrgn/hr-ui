@@ -67,6 +67,7 @@ export class VacancyDialogComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: null,
       name: [null, Validators.required],
+      description: [null, Validators.required],
       position: [null, Validators.required],
       employeeIds: [],
     });

@@ -39,11 +39,9 @@ section {
 
 .row:hover {
   cursor: pointer;
-  background-color: rgb(223,227,230, 0.8);
-}
+  color: #4d77fb;
+  font-weight: 400;
 
-.card{
-  overflow: hidden;
 }
 
 .remove {
@@ -59,7 +57,16 @@ section {
   border-radius: 8px;
   cursor: pointer;
 }
-.dropdown-menu {
-  z-index: 20;
+
+.remove {
+  color: red;
+  font-weight: 300;
+  border: 0.5px red solid;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 0.8rem;
 }
 
+.dropdown {
+  padding-right: 10px;
+}

@@ -1,10 +1,14 @@
 <div class="row-card" id="space-between">
   <div class="title"><div class="back" (click)="backClicked()"><h2>< Name of employee's profile</h2></div>
   <h2 (click)="backClicked()"></h2></div>
-    <button class="add-round-btn">
-    	<a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt="" /></a>
+    <button class="add-round-btn" (click)="doEdit()" *ngIf="!editable">
+    	<a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt=""  /></a>
     	EDIT
   </button>
+  <button class="add-round-btn" (click)="doEdit()" *ngIf="editable">
+    <a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt=""  /></a>
+    SAVE
+</button>
 </div>
 <div class="modal-body">
   
@@ -19,6 +23,7 @@
             class="form-control"
             formControlName="fullName"
             placeholder="Enter the fullname"
+            disabled= "true"
             required
           />
         </div>
@@ -30,6 +35,7 @@
             class="form-control"
             formControlName="email"
             placeholder="Enter the email"
+            disabled= "true"
             required
           />
         </div>
@@ -40,6 +46,7 @@
             type="text"
             class="form-control"
             formControlName="phoneNumber"
+            disabled= "true"
             placeholder="Enter the phone number"
           />
         </div>
@@ -59,7 +66,8 @@
 		          <label for="position">Comments</label>
 		          <input
 		            ngbAutofocus
-		            type="text"
+                type="text"
+                disabled= "true"
 		            class="form-control"
 		            formControlName="resume"
 		            placeholder="Enter the comments"
@@ -70,7 +78,6 @@
       </form>
     </div>
   </div>
-
 
 </div>
 
