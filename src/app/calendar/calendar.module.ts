@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarComponent } from './calendar.component';
+// import { CalendarComponent } from './calendar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { DxSchedulerModule } from 'devextreme-angular';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,12 +10,12 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: CalendarComponent,
+    // component: CalendarComponent,
   },
 ];
 
 @NgModule({
-  declarations: [CalendarComponent],
+  declarations: [],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
