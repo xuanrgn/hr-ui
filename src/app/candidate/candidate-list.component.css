@@ -42,14 +42,10 @@ section {
 }
 
 .row:hover {
-  overflow: hidden;
   cursor: pointer;
-  background-color: rgb(223,227,230, 0.8);
+  color: #2f80ed;
 }
 
-.card{
-  overflow: hidden;
-}
 
 .back {
   align-self: center;

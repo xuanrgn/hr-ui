@@ -1,4 +1,4 @@
-<div class="row-card" id="space-between">
+<div class="vacancy-row-card" id="space-between">
   <div class="title"><div class="back" (click)="backClicked()"><h2>< {{title}}</h2></div>
   <h2 (click)="backClicked()"></h2></div>
   <button class="add-round-btn" (click)="doCreate()">
@@ -6,11 +6,14 @@
   </button>
 </div>
 
+<div class="description">
+  <p>{{description}}</p>
+</div>
 <div class="card-column">
   <div class="card">
     <section>
-      <div class="row" *ngFor="let candidate of candidates | async" (click)="doEdit(candidate.id)">
-        <div class="col-8 col1">{{ candidate.fullName }}</div>
+      <div class="row" *ngFor="let candidate of candidates | async">
+        <div class="col-8 col1" (click)="doEdit(candidate.id)" >{{ candidate.fullName }}</div>
 
         <div class="col-3 col d-flex justify-content-end">
           <div class="dropdown show dropleft">
@@ -19,8 +22,6 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item header-bold" (click)="doEdit(candidate.id)">EDIT</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item text-danger header-bold" (click)="doDelete(candidate)">REMOVE</a>
             </div>
           </div>

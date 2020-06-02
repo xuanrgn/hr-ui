@@ -1,77 +1,58 @@
 <div class="row-card" id="space-between">
-  <div class="title"><div class="back" (click)="backClicked()"><h2>< Name of employee's profile</h2></div>
-  <h2 (click)="backClicked()"></h2></div>
-    <button class="add-round-btn">
-    	<a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt="" /></a>
-    	EDIT
+  <div class="title">
+    <div class="back" (click)="backClicked()">
+      <h2>
+        < Name of employee's profile</h2>
+    </div>
+    <h2 (click)="backClicked()"></h2>
+  </div>
+  <button class="add-round-btn" (click)="doEdit()" *ngIf="!editable">
+    <a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt="" /></a>
+    EDIT
+  </button>
+  <button class="add-round-btn" (click)="doEdit()" *ngIf="editable">
+    <a class="icon" style="padding: 5px;"> <img src="../assets/edit.svg" alt="" /></a>
+    SAVE
   </button>
 </div>
 <div class="modal-body">
-  
+
   <div class="row">
     <div class="col-7">
       <form [formGroup]="form" class="needs-validation" novalidate>
-        <div class="form-group">
-          <label for="fullName">Fullname</label>
-          <input
-            ngbAutofocus
-            type="text"
-            class="form-control"
-            formControlName="fullName"
-            placeholder="Enter the fullname"
-            required
-          />
+        <div class="column">
+          <div class="form-group">
+            <label for="fullName">Fullname</label>
+            <input ngbAutofocus type="text" class="form-control" formControlName="fullName"
+              placeholder="Enter the fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input ngbAutofocus type="text" class="form-control" formControlName="email" placeholder="Enter the email"
+             required />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone</label>
+            <input ngbAutofocus type="text" class="form-control" formControlName="phoneNumber"
+              placeholder="Enter the phone number" />
+          </div>
+          <div class="form-group">
+            <label for="position">Resume</label>
+            <input ngbAutofocus type="text" class="form-control" formControlName="resume"
+              placeholder="Enter the resume of candidate" required />
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            ngbAutofocus
-            type="text"
-            class="form-control"
-            formControlName="email"
-            placeholder="Enter the email"
-            required
-          />
+        
+        <div class="comments">
+          <div class="form-group">
+            <label for="position">Comments</label>
+            <input ngbAutofocus type="text" class="form-control" formControlName="resume"
+              placeholder="Enter the comments" required />
+          </div>
         </div>
-        <div class="form-group">
-          <label for="phoneNumber">Phone</label>
-          <input
-            ngbAutofocus
-            type="text"
-            class="form-control"
-            formControlName="phoneNumber"
-            placeholder="Enter the phone number"
-          />
-        </div>
-        <div class="form-group">
-          <label for="position">Resume</label>
-          <input
-            ngbAutofocus
-            type="text"
-            class="form-control"
-            formControlName="resume"
-            placeholder="Enter the resume of candidate"
-            required
-          />
-        </div>
-          <div class="comments">
-		  	<div class="form-group">
-		          <label for="position">Comments</label>
-		          <input
-		            ngbAutofocus
-		            type="text"
-		            class="form-control"
-		            formControlName="resume"
-		            placeholder="Enter the comments"
-		            required
-		          />
-		        </div>
-		  </div>
+        
       </form>
     </div>
   </div>
 
-
 </div>
-
-
